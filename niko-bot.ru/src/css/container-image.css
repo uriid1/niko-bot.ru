@@ -1,0 +1,44 @@
+/* Класс для картинки в контейнере */
+.container-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Класс для скриншотов в контейнере */
+.screenshot {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, z-index 0s ease 0.3s;
+  border-radius: 6px;
+}
+
+.screenshot:hover {
+  transform: scale(1.05);
+}
+
+/* Спойлер для картинок */
+details {
+  margin-top: 20px;
+  background-color: #7940bd;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+details.warning {
+  margin-top: 20px;
+  background-color: #cc6a84;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+summary {
+  color: #fff;
+  font-size: 18px;
+}

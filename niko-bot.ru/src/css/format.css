@@ -1,0 +1,32 @@
+h2.headlines {
+  margin-bottom: 10px;
+}
+
+h3.headlines {
+  margin-bottom: 10px;
+}
+
+/* Класс для команд */
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #7758d0;
+  padding: 2px 5px;
+  font-size: 14px;
+  transition: font-size 0.4s ease;
+
+  /*  Без переноса на новую строку*/
+  display: inline-block;
+}
+
+code:hover {
+  font-size: 16px;
+  transition: font-size 0.4s ease;
+  cursor: crosshair;
+}
+
+/* Картика с тегом p */
+.p-img {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

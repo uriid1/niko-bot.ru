@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды и не команды</title>
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/style-guide.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/guide-mobile.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/format.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/modal-image.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/container-image.css">
+    <link rel="stylesheet" type="text/css" href="../../../../src/css/burger.css">
+  </head>
+
+  <body>
+    <script src="../../../../src/js/index/openModal.js" defer></script>
+    <script src="../../../../src/js/index/toggleMenu.js" defer></script>
+
+    <div class="modal" id="screenshotModal">
+      <span class="close" id="closeModal">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+    <div class="header">
+      <span class="logo">Niko Bot</span>
+      <div class="links">
+        <a href="../../../../../index.html">Гайды</a>
+        <a href="https://t.me/niko_bot_news">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
+      </div>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Модераторские команды</h1>
+
+      <div class="content-info">
+        <h2 class="headlines">Менеджмент участников чата</h2>
+        <p><span>·· </span><a href="#ban" class="link">Бан, /ban</a></p>
+        <p><span>·· </span><a href="#unban" class="link">Анбан, /unban</a></p>
+        <p><span>·· </span><a href="#mute" class="link">Мут, /mute</a></p>
+        <p><span>·· </span><a href="#unmute" class="link">Анмут, /unmute</a></p>
+        <p><span>·· </span><a href="#warn" class="link">Варн, /warn</a></p>
+        <p><span>·· </span><a href="#warndel" class="link">Варндел, /warndel</a></p>
+        <p><span>·· </span><a href="#unwarn" class="link">Анварн, /unwarn</a></p>
+        <p><span>·· </span><a href="#rights" class="link">Права, /rights</a></p>
+        <p><span>·· </span><a href="#unnfo" class="link">Юзинфо, /uinfo</a></p>
+        <br>
+        <h2 class="headlines">Приветственное сообщение</h2>
+        <p><span>·· </span><a href="#mkhello" class="link">Сбпривет, /mkhello</a></p>
+        <p><span>·· </span><a href="#delhello" class="link">Делпривет, /delhello</a></p>
+        <br>
+        <h2 class="headlines">Настройки чата</h2>
+        <p><span>·· </span><a href="#settings" class="link">/settings</a></p>
+        <p><span>·· </span><a href="#get_chat_settings" class="link">/get_chat_settings</a></p>
+        <p><span>·· </span><a href="#set_chat_settings" class="link">/set_chat_settings</a></p>
+        <p><span>·· </span><a href="#mk_report_chat" class="link">/mk_report_chat</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="warning-info">
+        <p>Чтобы почитать о команде, например о команде <code>мут</code> пиши <code>команда мут</code></p>
+        <p>Список команд можно просмотреть введя - <code>команды</code></p>
+      </div>
+    </div>
+
+    <div class="container" id="ban">
+      <div class="title-section">Бан - блокировка пользователя</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p><code>бан</code></p>
+        <p>↳ Удаляет пользователя, ответом на сообщение</p>
+        <br>
+        <p><code>бан 1234567890</code></p>
+        <p>↳ Удаляет пользователя по его ID</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/ban.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="unban">
+      <div class="title-section">Анбан - Снятие ограничений пользователю</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p><code>анбан</code></p>
+        <p>↳ Снимает все ограничения пользователю, на чьё сообщение был ответ</p>
+        <br>
+        <p><code>анбан 1234567890</code></p>
+        <p>↳ Снимает ограничения пользователю по его ID</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/unban.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="mute">
+      <div class="title-section">Мут - Ограничение оправки сообщений</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p><code>мут 30м</code></p>
+        <p>↳ Ограничит пользователя писать в чат 30 минут</p>
+        <br>
+        <p><code>мут 4ч</code></p>
+        <p>↳ Ограничит пользователя писать в чат 4 часа</p>
+        <br>
+        <p><code>мут 1д</code></p>
+        <p>↳ Ограничит на сутки</p>
+        <br>
+        <p><code>мут навсегда</code></p>
+        <p>↳ Ограничит навсегда</p>
+        <br>
+        <p><code>мут</code></p>
+        <p>↳ По умолчанию ограничивает на 5 минут</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/mute.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="unmute">
+      <div class="title-section">Анмут - разрешить писать в чат</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p><code>анмут</code></p>
+        <p>↳ Снимает ограничения пользователю, на чьё сообщение был ответ</p>
+        <br>
+        <p><code>антмут 1234567890</code></p>
+        <p>↳ Снимает ограничения пользователю по его ID</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/unmute.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="warn">
+      <div class="title-section">Варн - выдача предупреждения</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Выдача предупреждений пользователю</p>
+        <p class="warning">❗️ После трех предупреждений, пользователь отправляется в мут на час</p>
+        <br>
+        <p><code>варн</code></p>
+        <p><code>пред</code></p>
+        <p>↳ Предупреждение пользователю, на чьё сообщение был ответ</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/warn.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="warndel">
+      <div class="title-section">Варндел - предупреждение и удаление сообщения</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p><code>варндел</code></p>
+        <p>↳ Предупреждение пользователю, на чьё сообщение был ответ И УДАЛЕНИЕ ЕГО СООБЩЕНИЯ</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/warndel.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="unwarn">
+      <div class="title-section">Анварн - снятие предупреждений</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Снятие предупреждений с пользователя или со всех пользователей</p>
+        <br>
+        <p><code>анварн</code></p>
+        <p>↳ Снятие предупреждений пользователю, на чьё сообщение был ответ</p>
+
+        <br>
+        <p><code>анварн 1234567890</code></p>
+        <p>↳ Снятие предупреждений по ID</p>
+
+        <br>
+        <p><code>анварн всем</code></p>
+        <p>↳ Снятие предупреждений всем пользователям</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/unwarn.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="rights">
+      <div class="title-section">Права - просмотр прав пользователя</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/rights.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="uinfo">
+      <div class="title-section">Юзинфо -  Информация о пользователе</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/uinfo.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="mkhello">
+      <div class="title-section">Сбпривет - сделать приветственное сообщение</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Установка приветственного сообщения для новых участников чата.
+        Поддерживаются html теги</p>
+
+        <h3 class="headlines"><i>Использование</i></h3>
+        <p>Пишешь текст приветственного сообщения, можно с картикой, гифкой или видео, после чего,
+          отвечаешь на своё сообщение командой <code>/mkhello</code> или сбпривет</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/mkhello.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="delhello">
+      <div class="title-section">Делпривет - удаление приветственного сообщения</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Убирает приветственное сообщение в чате</p>
+      </div>
+    </div>
+
+    <div class="container" id="settings">
+      <div class="title-section">/settings - настройка чата</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <b>Установка настроек чата через кнопки</b>
+        <p>Фактически повторяет функционал команды <code>/set_chat_settings</code> только с кнопками</p>
+
+        <br>
+        <b><i>Про кнопки</i></b>
+        <p>⚪️ <b>Антифлуд</b> - запрещает отправлять более 3х сообщений за 1-2 секунды. Предотвращая тем самым флуд в чате.</p>
+        <br>
+        <p>⚪️ <b>Приветственное сб</b> - позволяет включить или отключить приветственное сообщение без его удаления.</p>
+        <br>
+        <p>⚪️ <b>Блокировать пересылку сб</b> - запрещает пересылать в чат сообщения с других чатов.</p>
+        <br>
+        <p>⚪️ <b>Блокировать сб от имени чата</b> - блолкирует возможность писать в ваш чат от имени другого чата.</p>
+        <br>
+        <p>⚪️ <b>Удаление длинных сб</b> - удаляет длинные сообщения (более 1000 символов)</p>
+        <br>
+        <p>⚪️ <b>Удаление ссылок</b> - запрещает отправлять ссылки в чат</p>
+
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/settings.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="get_chat_settings">
+      <div class="title-section">/get_chat_settings - просмотреть настройки чата</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/get_chat_settings.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+
+    <div class="container" id="set_chat_settings">
+      <div class="title-section">/set_chat_settings - установка своих настроек</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p class="warning">Эта команда для тех, кто понимает зачем она ему!</p>
+      </div>
+    </div>
+
+    <div class="container" id="mk_report_chat">
+      <div class="title-section">/mk_report_chat - установить чат для репортов</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Вы можете установить чат для рептов, это значит, что в него будут приходить репорты от команды <code>/report</code>
+        а так же логироваться все действия модераторов.</p>
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/mk_report_chat.png" alt="screenshot" class="screenshot">
+        </details>
+
+        <br>
+        <b><i>Пример логов</i></b>
+        <details>
+          <summary>Скрин</summary>
+          <img src="images/logs.png" alt="screenshot" class="screenshot">
+        </details>
+      </div>
+    </div>
+  </body>
+</html>

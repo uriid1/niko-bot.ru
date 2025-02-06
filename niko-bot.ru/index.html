@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список гайдов</title>
+    <link rel="stylesheet" type="text/css" href="src/css/index.css">
+    <link rel="stylesheet" type="text/css" href="src/css/index-mobile.css">
+    <link rel="stylesheet" type="text/css" href="src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="src/css/modal-image.css">
+    <link rel="stylesheet" type="text/css" href="src/css/burger.css">
+  </head>
+
+  <body>
+    <script src="src/js/index/openModal.js" defer></script>
+    <script src="src/js/index/toggleMenu.js"></script>
+
+    <div class="modal" id="screenshotModal">
+      <span class="close" id="closeModal">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+    <div class="header">
+      <span class="logo">Niko Bot</span>
+      <div class="links">
+        <a href="#" class="active">Гайды</a>
+        <a href="https://t.me/niko_bot_news">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
+      </div>
+      <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="container">
+      <a href="src/pages/commands-guide/index.html" class="box">
+        <div class="content-section">
+          <h3>Гайд по основным игровым командам</h3>
+          <img src="src/images/gaming.gif" alt="screenshot" class="image">
+        </div>
+      </a>
+
+      <a href="src/pages/mod-commands-guide/index.html" class="box">
+        <div class="content-section">
+          <h3>Гайд по модераторским командам</h3>
+          <img src="src/images/moderator.gif" alt="screenshot" class="image">
+        </div>
+      </a>
+    </div>
+  </body>
+</html>

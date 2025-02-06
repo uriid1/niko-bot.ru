@@ -1,0 +1,133 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #340c62;
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+p { 
+  margin: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* Центрироваие контейнера и добавление отступов сверху */
+  margin: 20px auto;
+  margin-top: 0px;
+  /* Внутренние отступы */
+  padding: 0px;
+  /* Ширина контейнера */
+  width: 80%;
+  max-width: 800px;
+}
+
+.container .content-section {
+  background: #682caf;
+  padding-inline: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  border-bottom: 2px solid #8457b9;
+}
+
+.container .content-section a {
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container .content-section a:hover {
+  color: #ff9900;
+  border-bottom: 2px solid #ff9900;
+}
+
+.container .content-section .union p{
+  margin: 10px;
+  padding-left: 15px;
+}
+
+.container .title-section {
+  display: flex;
+  /* Центрирует элементы по вертикали */
+  align-items: center;
+  /* Добавляет небольшой отступ между картинкой и текстом */
+  gap: 10px;
+
+  background: #582caf;
+  padding: 20px;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.container .space {
+  padding: 2px;
+}
+
+.content-section .warning {
+  background-color: #a96a95;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Класс контейнера для предупреждений */
+.container .warning-info {
+  background: #B03052;
+  padding-inline: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  border-bottom: 2px solid #d87892;
+}
+
+.container .warning-info a {
+  color: #fff7bb;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  transition: font-size 0.4s ease;
+  font-weight: bold;
+}
+
+.container .warning-info a:hover {
+  color: #ff9900;
+  font-size: 20px;
+  border-bottom: 2px solid #ff9900;
+  transition: font-size 0.4s ease;
+}
+
+/* Класс контейнера для содержания */
+.container .content-info {
+  background: #441752;
+  padding-inline: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  border-bottom: 2px solid #6f2686;
+}
+
+.container .content-info a {
+  color: #fff7bb;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  transition: font-size 0.4s ease;
+  font-weight: bold;
+}
+
+.container .content-info a:hover {
+  color: #ff9900;
+  font-size: 20px;
+  border-bottom: 2px solid #ff9900;
+  transition: font-size 0.4s ease;
+}

@@ -1,0 +1,12 @@
+/* Обработка поведения для мобильных устройств */
+@media (max-width: 768px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* Скрытие логотипа */
+  .header .logo {
+    display: none;
+  }
+}

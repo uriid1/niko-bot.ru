@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  background: #14022b;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #3f1d68;
+  padding: 0 15px;
+  border-radius: 4px;
+}
+
+.header .logo {
+  color: #d420ac;
+  font-size: 44px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-shadow: 2px 2px 0px #7940bd;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 30px;
+  font-size: 24px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  transition: border-bottom 0.1s ease, transform 0.3s ease;
+  border-radius: 10px;
+
+  border-bottom: 5px solid #14022b;
+}
+.header a:hover {
+  border-bottom: 5px solid #ff9900;
+  transition: border-bottom 0.1s ease, transform 0.3s ease;
+  transform: rotate(5deg);
+}
+
+.active {
+  border-bottom: 5px solid #8B5DFF;
+}
+
+.header .links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-grow: 1;
+}
