@@ -1,9 +1,10 @@
 body {
   font-family: 'Arial', sans-serif;
   background: #340c62;
+  color: #fff;
+
   margin: 10px;
   padding: 10px;
-  color: #fff;
 }
 
 a.box {
@@ -37,12 +38,14 @@ a:hover.box {
 }
 
 .container .content-section {
-  width: 300px;
-  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width: 300px;
+  height: 250px;
+
   text-align: center;
   background: #682caf;
   padding: 20px;

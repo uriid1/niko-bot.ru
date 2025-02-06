@@ -1,11 +1,13 @@
 .header {
   display: flex;
-  background: #14022b;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #3f1d68;
+
+  background: #14022b;
   padding: 0 15px;
-  border-radius: 4px;
+
+  border-radius: 5px;
+  border-bottom: 2px solid #3f1d68;
 }
 
 .header .logo {
