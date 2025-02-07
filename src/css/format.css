@@ -8,19 +8,19 @@ h3.headlines {
 
 /* Класс для команд */
 code {
-  font-family: 'Courier New', monospace;
-  background-color: #7758d0;
-  padding: 2px 5px;
-  font-size: 14px;
-  transition: font-size 0.4s ease;
+  font-size: 16px;
+
+  background-color: #797eb0;
+  transition: transform 0.1s ease;
 
   /*  Без переноса на новую строку*/
   display: inline-block;
+  padding: 0px 2px;
 }
 
 code:hover {
-  font-size: 16px;
-  transition: font-size 0.4s ease;
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
   cursor: crosshair;
 }
 
@@ -30,3 +30,4 @@ code:hover {
   align-items: center;
   gap: 8px;
 }
+

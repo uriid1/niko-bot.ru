@@ -24,18 +24,18 @@
 /* Спойлер для картинок */
 details {
   margin-top: 20px;
-  background-color: #7940bd;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
+  background-color: #69629c;
 }
 
 details.warning {
   margin-top: 20px;
-  background-color: #cc6a84;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
+  background-color: #b285a0;
 }
 
 summary {

@@ -1,10 +1,23 @@
+html, body {
+  margin: 0;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background: #340c62;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+  font-size: 16px;
   color: #fff;
 
-  margin: 10px;
-  padding: 10px;
+  background: #29244c;
+  min-height: 100vh;
+}
+
+p { 
+  margin: 5px;
 }
 
 a.box {
@@ -19,7 +32,7 @@ a.box {
 a:hover.box {
   font-size: 16px;
   transition: font-size 0.4s ease;
-  color: #ff9900;
+  color: #ebb87a;
 }
 
 .image {
@@ -34,7 +47,8 @@ a:hover.box {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: 95%;
+  flex: 1;
 }
 
 .container .content-section {
@@ -47,10 +61,10 @@ a:hover.box {
   height: 250px;
 
   text-align: center;
-  background: #682caf;
   padding: 20px;
   border-radius: 6px;
-  border-bottom: 2px solid #8457b9;
+  background: #57508d;
+  border-bottom: 2px solid #77729f;
 }
 
 .space {

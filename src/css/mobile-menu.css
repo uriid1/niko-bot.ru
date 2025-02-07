@@ -1,0 +1,132 @@
+/* Кнопка-бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.burger .line {
+  width: 30px;
+  height: 4px;
+  margin: 5px 0;
+  background-color: #fff;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+
+  color: white;
+  cursor: pointer;
+  position: absolute;
+
+  /* Позиционирование справа */
+  top: -20px;
+  right: -20px;
+  /* Ставим крестик выше всех других элементов */
+  z-index: 10000;
+  width: 50px; /* Ширина круга */
+  height: 50px;
+  /* Создание круга */
+  border-radius: 50%;
+  /* Цвет фона круга */
+  background-color: #473f84;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.3);
+}
+
+.burger-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Затемнение */
+  z-index: 9998; /* Чуть ниже, чем .burger-background */
+}
+
+.burger-background {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly; /* Равномерное распределение */
+  /* Центрируем по горизонтали */
+  align-items: flex-start;
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  width: 80%;
+  min-height: 380px;
+  max-height: 400px;
+
+  height: 30%;
+  min-width: 350px;
+  max-width: 450px;
+
+  background-color: #29244c;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border-radius: 6px;
+}
+
+.burger-background .menu-tittle {
+  align-self: center;
+  font-size: 40px;
+}
+
+.burger-background .menu-link {
+  display: flex;
+  flex-direction: column;
+  /* Выравниваем ссылки влево */
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.burger-background .menu-link a {
+  color: #f7dec1;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 40px;
+  transition: transform 0.3s ease;
+}
+
+.burger-background .menu-link a:hover {
+  color: #9c96f7;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 40px;
+
+  transform: scale(1.2);
+}
+
+/* Мобильное меню */
+@media (max-width: 500px) {
+  .header {
+    border-radius: none;
+  }
+
+  .header .links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header .links.active {
+    display: flex;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}

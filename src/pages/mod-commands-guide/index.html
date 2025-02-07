@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команды и не команды</title>
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/style-guide.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/guide-mobile.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/format.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/modal-image.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/container-image.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/burger.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/footer.css">
+    <title>niko-bot - Гайд по модераторским командам</title>
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/style-guide.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/container-images.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/format.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/guide-mobile.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/mobile-menu.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/modal-image.css">
   </head>
 
   <body>
-    <script src="../../../../src/js/index/openModal.js" defer></script>
-    <script src="../../../../src/js/index/toggleMenu.js" defer></script>
+    <script src="../../../../src/js/openModal.js" defer></script>
+    <script src="../../../../src/js/toggleMenu.js" defer></script>
 
+    <!-- Модальное окно для сриншотов -->
     <div class="modal" id="screenshotModal">
       <span class="close" id="closeModal">&times;</span>
       <img class="modal-content" id="modalImage">
     </div>
 
+    <!-- Шапка сайта -->
     <div class="header">
       <span class="logo">Niko Bot</span>
       <div class="links">
@@ -30,13 +32,29 @@
         <a href="https://t.me/niko_bot_news">Новости</a>
         <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
       </div>
+
+      <!-- Бургерное меню -->
       <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
     </div>
 
+    <!-- Фон для бургерного меню -->
+    <div class="burger-overlay"></div>
+    <div class="burger-background">
+      <div class="close-btn" onclick="closeMenu()">&times;</div>
+      <p class="menu-tittle">Меню</p>
+
+      <div class="menu-link">
+        <a href="../../../../../index.html">Гайды</a>
+        <a href="https://t.me/niko_bot_news">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
+      </div>
+    </div>
+
+    <!-- Описание содержимого -->
     <div class="container">
       <h1>Модераторские команды</h1>
 
@@ -62,17 +80,19 @@
         <p><span>·· </span><a href="#set_chat_settings" class="link">/set_chat_settings</a></p>
         <p><span>·· </span><a href="#mk_report_chat" class="link">/mk_report_chat</a></p>
       </div>
-    </div>
 
-    <div class="container">
+      <div class="section-space"></div>
+
       <div class="warning-info">
         <p>Чтобы почитать о команде, например о команде <code>мут</code> пиши <code>команда мут</code></p>
         <p>Список команд можно просмотреть введя - <code>команды</code></p>
       </div>
+
+      <div class="section-space"></div>
     </div>
 
-    <div class="container" id="ban">
-      <div class="title-section">Бан - блокировка пользователя</div>
+    <div class="container" >
+      <div class="title-section" id="ban">Бан - блокировка пользователя</div>
       <div class="space"></div>
       <div class="content-section">
         <p><code>бан</code></p>
@@ -86,10 +106,10 @@
           <img src="images/ban.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="unban">
-      <div class="title-section">Анбан - Снятие ограничений пользователю</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="unban">Анбан - Снятие ограничений пользователю</div>
       <div class="space"></div>
       <div class="content-section">
         <p><code>анбан</code></p>
@@ -103,10 +123,10 @@
           <img src="images/unban.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="mute">
-      <div class="title-section">Мут - Ограничение оправки сообщений</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="mute">Мут - Ограничение оправки сообщений</div>
       <div class="space"></div>
       <div class="content-section">
         <p><code>мут 30м</code></p>
@@ -129,10 +149,10 @@
           <img src="images/mute.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="unmute">
-      <div class="title-section">Анмут - разрешить писать в чат</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="unmute">Анмут - разрешить писать в чат</div>
       <div class="space"></div>
       <div class="content-section">
         <p><code>анмут</code></p>
@@ -146,10 +166,10 @@
           <img src="images/unmute.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="warn">
-      <div class="title-section">Варн - выдача предупреждения</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="warn">Варн - выдача предупреждения</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Выдача предупреждений пользователю</p>
@@ -164,10 +184,10 @@
           <img src="images/warn.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="warndel">
-      <div class="title-section">Варндел - предупреждение и удаление сообщения</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="warndel">Варндел - предупреждение и удаление сообщения</div>
       <div class="space"></div>
       <div class="content-section">
         <p><code>варндел</code></p>
@@ -178,10 +198,10 @@
           <img src="images/warndel.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="unwarn">
-      <div class="title-section">Анварн - снятие предупреждений</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="unwarn">Анварн - снятие предупреждений</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Снятие предупреждений с пользователя или со всех пользователей</p>
@@ -202,10 +222,10 @@
           <img src="images/unwarn.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="rights">
-      <div class="title-section">Права - просмотр прав пользователя</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="rights">Права - просмотр прав пользователя</div>
       <div class="space"></div>
       <div class="content-section">
         <details>
@@ -213,10 +233,10 @@
           <img src="images/rights.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="uinfo">
-      <div class="title-section">Юзинфо -  Информация о пользователе</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="unnfo">Юзинфо -  Информация о пользователе</div>
       <div class="space"></div>
       <div class="content-section">
         <details>
@@ -224,10 +244,10 @@
           <img src="images/uinfo.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="mkhello">
-      <div class="title-section">Сбпривет - сделать приветственное сообщение</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="mkhello">Сбпривет - сделать приветственное сообщение</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Установка приветственного сообщения для новых участников чата.
@@ -242,18 +262,18 @@
           <img src="images/mkhello.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="delhello">
-      <div class="title-section">Делпривет - удаление приветственного сообщения</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="delhello">Делпривет - удаление приветственного сообщения</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Убирает приветственное сообщение в чате</p>
       </div>
-    </div>
 
-    <div class="container" id="settings">
-      <div class="title-section">/settings - настройка чата</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="settings">/settings - настройка чата</div>
       <div class="space"></div>
       <div class="content-section">
         <b>Установка настроек чата через кнопки</b>
@@ -278,10 +298,10 @@
           <img src="images/settings.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="get_chat_settings">
-      <div class="title-section">/get_chat_settings - просмотреть настройки чата</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="get_chat_settings">/get_chat_settings - просмотреть настройки чата</div>
       <div class="space"></div>
       <div class="content-section">
         <details>
@@ -289,20 +309,20 @@
           <img src="images/get_chat_settings.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="set_chat_settings">
-      <div class="title-section">/set_chat_settings - установка своих настроек</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="set_chat_settings">/set_chat_settings - установка своих настроек</div>
       <div class="space"></div>
       <div class="content-section">
         <p class="warning">Эта команда для тех, кто понимает зачем она ему!</p>
       </div>
-    </div>
 
-    <div class="container" id="mk_report_chat">
+      <div class="section-space"></div>
+
       <div class="title-section">/mk_report_chat - установить чат для репортов</div>
       <div class="space"></div>
-      <div class="content-section">
+      <div class="content-section" id="mk_report_chat">
         <p>Вы можете установить чат для рептов, это значит, что в него будут приходить репорты от команды <code>/report</code>
         а так же логироваться все действия модераторов.</p>
         <details>
@@ -317,12 +337,17 @@
           <img src="images/logs.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
+    
+      <div class="section-space"></div>
     </div>
 
-    <div class="footer">
-      <div class="links">
-        <p>О, ну это конец страницы!</p>
-        <p>(c) uriid1</p>
+    <!-- Футер -->
+    <div class="footer-container">
+      <div class="footer">
+        <div class="block-info">
+          <p>Вы дошли до дна</p>
+          <p>(c) uriid1</p>
+        </div>
       </div>
     </div>
   </body>

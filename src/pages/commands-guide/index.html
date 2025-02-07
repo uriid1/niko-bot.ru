@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команды и не команды</title>
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/style-guide.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/guide-mobile.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/format.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/modal-image.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/container-image.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/burger.css">
-    <link rel="stylesheet" type="text/css" href="../../../../src/css/footer.css">
+    <title>niko-bot - Гайд по командам</title>
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/style-guide.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/container-images.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/format.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/guide-mobile.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/mobile-menu.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/modal-image.css">
   </head>
 
   <body>
-    <script src="../../../../src/js/index/openModal.js" defer></script>
-    <script src="../../../../src/js/index/toggleMenu.js"></script>
+    <script src="../../../../src/js/openModal.js" defer></script>
+    <script src="../../../../src/js/toggleMenu.js" defer></script>
 
+    <!-- Модальное окно для сриншотов -->
     <div class="modal" id="screenshotModal">
       <span class="close" id="closeModal">&times;</span>
       <img class="modal-content" id="modalImage">
     </div>
 
+    <!-- Шапка сайта -->
     <div class="header">
       <span class="logo">Niko Bot</span>
       <div class="links">
@@ -30,13 +32,29 @@
         <a href="https://t.me/niko_bot_news">Новости</a>
         <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
       </div>
+
+      <!-- Бургерное меню -->
       <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
     </div>
 
+    <!-- Фон для бургерного меню -->
+    <div class="burger-overlay"></div>
+    <div class="burger-background">
+      <div class="close-btn" onclick="closeMenu()">&times;</div>
+      <p class="menu-tittle">Меню</p>
+
+      <div class="menu-link">
+        <a href="../../../../../index.html">Гайды</a>
+        <a href="https://t.me/niko_bot_news">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
+      </div>
+    </div>
+
+    <!-- Описание содержимого -->
     <div class="container">
       <h1>Гайд по командам</h1>
 
@@ -60,6 +78,8 @@
         <p><span>·· </span><a href="#privacy">Приватность</a></p>
         <p><span>·· </span><a href="#otherCommands">Другие команды</a></p>
       </div>
+
+      <div class="section-space"></div>
     </div>
 
     <div class="container">
@@ -73,9 +93,9 @@
 
         <p>Все остальные это подделки и дешевки с алиэкспрес!</p>
       </div>
-    </div>
 
-    <div class="container">
+      <div class="section-space"></div>
+
       <div class="warning-info">
         <p>🔔 Если Вы не хотите, что бы бот вас отмечал (тегал со звуком), отключите уведомления</p>
 
@@ -84,10 +104,30 @@
           <img src="images/disableSound.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
+
+      <div class="section-space"></div>
     </div>
 
-    <div class="container" id="marriage">
-      <div class="title-section">💒 Система браков</div>
+    <div class="section-space"></div>
+
+    <div class="container">
+      <div class="title-section" id="profile">👤 Профиль игрока</div>
+      <div class="space"></div>
+      <div class="content-section">
+        <p>Ваш профиль доступен по команде <code>профиль</code><p>
+        <p>Чтобы сменить расу, используйте команду  <code>сменить расу</code></p>
+        <p>Чтобы сменить возраст, команда <code>сменить возраст [число]</code></p>
+        <p>Чтобы просмотреть чужой профиль, ответьте на сообщение командой <code>инфо</code></p>
+
+        <details>
+          <summary>Скрин профиля</summary>
+          <img src="images/profile.jpg" alt="screenshot" class="screenshot" loading="lazy">
+        </details>
+      </div>
+
+      <div class="section-space"></div>
+
+      <div class="title-section" id="marriage">💒 Система браков</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Для заключения брака необходимо ответить на сообщение человека, которому желаете сделать предложение, с командой: <code>вбрак</code></p>
@@ -103,26 +143,11 @@
           <img src="images/marriage.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="profile">
-      <div class="title-section">👤 Профиль игрока</div>
-      <div class="space"></div>
-      <div class="content-section">
-        <p>Ваш профиль доступен по команде <code>профиль</code><p>
-        <p>Чтобы сменить расу, используйте команду  <code>сменить расу</code></p>
-        <p>Чтобы сменить возраст, команда <code>сменить возраст [число]</code></p>
-        <p>Чтобы просмотреть чужой профиль, ответьте на сообщение командой <code>инфо</code></p>
 
-        <details>
-          <summary>Скрин профиля</summary>
-          <img src="images/profile.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-    </div>
+      <div class="section-space"></div>
 
-    <div class="container" id="friends">
-      <div class="title-section">🎭 Система друзей</div>
+      <div class="title-section" id="friends">🎭 Система друзей</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Чтобы добавить в друзья  необходимо ответить на сообщение командой <code>вдрузья</code></p>
@@ -134,10 +159,10 @@
           <img src="images/friends.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="games">
-      <div class="title-section">🎲 Мини игры</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="#games">🎲 Мини игры</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Просмотреть все мини-игры, команда <code>игры</code> - c примерами команд, как в них играть!</p>
@@ -162,10 +187,10 @@
           <img src="images/games.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="fishing">
-      <div class="title-section">🎣 Рыбалка и Рудник</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="fishing">🎣 Рыбалка и Рудник</div>
       <div class="space"></div>
       <div class="content-section">
         <p><b>Рыбалка - это PVE мини-игра, в которой вы ловите и потом её продаете.</b></p>
@@ -192,10 +217,10 @@
           <img src="images/mine-sell.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="inventory">
-      <div class="title-section">🎒 Инвентарь</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="inventory">🎒 Инвентарь</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Открыть инвентарь, команда <code>инвентарь</code></p>
@@ -207,6 +232,7 @@
           <p>● Слоты стакаются автоматически</p>
           <p>● Предел инвентаря - <b>100</b> слотов</p>
         </div>
+        <br>
         <p>Если написать <code>продать змея 1</code> - можно продать змею, ну или любой другой элемент вашего инвентаря</p>
 
         <p><img src="../../../../src/images/pepe/goose-pepe.gif" width="64" height="64" loading="lazy">* бежит продавать *</p>
@@ -216,10 +242,10 @@
           <img src="images/inventory.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="trade">
-      <div class="title-section">🤝 Обмен ресурсами</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="trade">🤝 Обмен ресурсами</div>
       <div class="space"></div>
       <div class="content-section">
         <p><b>Ресурсами из вашего инвентаря можно обменяться</b></p>
@@ -241,10 +267,10 @@
           <img src="images/trade.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="like">
-      <div class="title-section">❤️‍🔥 Лайки</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="like">❤️‍🔥 Лайки</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Лайки уникальны, лайк можно получить только от одного пользователя</p>
@@ -256,25 +282,25 @@
           <img src="images/like.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="limits">
-      <div class="title-section">🗒 Лимиты</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="#limits">🗒 Лимиты</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Лимиты - это ваши ограничения, например, лимит на спины равен <b>100</b> попыткам в день.</p> 
         <p>Чтобы просмотреть свои лимиты, команда <code>лимиты</code></p>
-        <p clas="p-img"><a href="#vip">У vip-пользователей, лимитов почти нет! </a><img src="../../../../src/images/pepe/pepe-like.gif" width="32" height="32"></p>
+        <p clas="p-img"><a href="vip">У vip-пользователей, лимитов почти нет! </a><img src="../../../../src/images/pepe/pepe-like.gif" width="32" height="32"></p>
 
         <details>
           <summary>Скрин лимитов</summary>
           <img src="images/limits.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="stats">
-      <div class="title-section">📈 Статистика</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="stats">📈 Статистика</div>
       <div class="space"></div>
       <div class="content-section">
         <p class="p-img">
@@ -298,10 +324,10 @@
           <img src="images/stats.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="casino">
-      <div class="title-section">
+      <div class="section-space"></div>
+
+      <div class="title-section" id="casino">
         <img src="../../../../src/images/casino.gif" width="48" height="48" loading="lazy"> Спины и Казино
       </div>
       <div class="space"></div>
@@ -319,10 +345,10 @@
           <img src="images/casino.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="bonus">
-      <div class="title-section">🎁 Бонус</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="bonus">🎁 Бонус</div>
       <div class="space"></div>
       <div class="content-section">
       <p>Бонус выдает один раз в 24 часа, чтобы получить свой бонус, команда <code>бонус</code></p>
@@ -337,10 +363,10 @@
         <img src="images/bonus.jpg" alt="screenshot" class="screenshot" loading="lazy">
       </details>
       </div>
-    </div>
 
-    <div class="container" id="tops">
-      <div class="title-section">🐙 Топы</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="tops">🐙 Топы</div>
       <div class="space"></div>
       <div class="content-section">
         <p><i><b>Список топовых топов</b></i></p>
@@ -375,10 +401,10 @@
           <img src="images/topchat.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="vip">
-      <div class="title-section">
+      <div class="section-space"></div>
+
+      <div class="title-section" id="vip">
         <img src="../../../../src/images/crown.gif" width="48" height="48" loading="lazy"> VIP Статус
       </div>
       <div class="space"></div>
@@ -401,10 +427,10 @@
           * Кстати vip стоит не дорого ;) *
         </p>
       </div>
-    </div>
 
-    <div class="container" id="rp">
-      <div class="title-section">📜 РП команды</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="rp">📜 РП команды</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Список всех РП команд можно посмотреть введя <code>команда обнять</code></p>
@@ -420,10 +446,10 @@
           <img src="images/kus.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="karma">
-      <div class="title-section">🔮 Карма</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="karma">🔮 Карма</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Карма это элемент РП, который показывает, насколько вас ценят другие пользователи!
@@ -443,10 +469,10 @@
           <img src="images/karma.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="privacy">
-      <div class="title-section">🦸🏻 Приватность</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="privacy">🦸🏻 Приватность</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Включив режим приватности, ссылка на ваш профиль не будет отображаться в различных топах.</p>
@@ -458,10 +484,10 @@
           <img src="images/privacy.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
-    </div>
 
-    <div class="container" id="otherCommands">
-      <div class="title-section">🧾 Другие команды</div>
+      <div class="section-space"></div>
+
+      <div class="title-section" id="otherCommands">🧾 Другие команды</div>
       <div class="space"></div>
       <div class="content-section">
         <p>Чтобы просмотреть все команды напишите <code>команды</code></p>
@@ -479,12 +505,18 @@
           <img src="images/others.jpg" alt="screenshot" class="screenshot" loading="lazy">
         </details>
       </div>
+
+      <div class="section-space"></div>
     </div>
 
-    <div class="footer">
-      <div class="links">
-        <p>Вы дошли до дна</p>
-        <p>(c) uriid1</p>
+    <div class="footer-space"></div>
+
+    <div class="footer-container">
+      <div class="footer">
+        <div class="block-info">
+          <p>Вы дошли до дна</p>
+          <p>(c) uriid1</p>
+        </div>
       </div>
     </div>
   </body>

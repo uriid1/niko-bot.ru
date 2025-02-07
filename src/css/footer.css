@@ -1,11 +1,30 @@
-.footer {
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+
+  align-items: center;
+  width: 95%;
+}
+
+.footer-container .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 15px;
-  background: #14022b;
+  border-radius: 4px;
+  background: #100e22;
+  border-top: 2px solid #363255;
 
-  border-radius: 5px;
-  border-top: 2px solid #3f1d68;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.footer-container .footer .block-info {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-container .footer .block-info p {
+  margin: 5px;
 }

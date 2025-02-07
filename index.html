@@ -3,35 +3,46 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список гайдов</title>
-    <link rel="stylesheet" type="text/css" href="src/css/index.css">
-    <link rel="stylesheet" type="text/css" href="src/css/index-mobile.css">
-    <link rel="stylesheet" type="text/css" href="src/css/header.css">
-    <link rel="stylesheet" type="text/css" href="src/css/modal-image.css">
-    <link rel="stylesheet" type="text/css" href="src/css/burger.css">
-    <link rel="stylesheet" type="text/css" href="src/css/footer.css">
+    <title>niko-bot - Главная</title>
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/container-images.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/format.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/guide-mobile.css">
+    <link rel="stylesheet" type="text/css" href="/../../../src/css/mobile-menu.css">
   </head>
 
   <body>
-    <script src="src/js/index/openModal.js" defer></script>
-    <script src="src/js/index/toggleMenu.js"></script>
+    <script src="../../../../src/js/toggleMenu.js" defer></script>
 
-    <div class="modal" id="screenshotModal">
-      <span class="close" id="closeModal">&times;</span>
-      <img class="modal-content" id="modalImage">
-    </div>
-
+    <!-- Шапка сайта -->
     <div class="header">
       <span class="logo">Niko Bot</span>
       <div class="links">
-        <a href="#" class="active">Гайды</a>
+        <a href="#"                                     >Гайды</a>
+        <a href="https://t.me/niko_bot_news"            >Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat"  >Донат</a>
+      </div>
+
+      <!-- Бургерное меню -->
+      <div class="burger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <!-- Фон для бургерного меню -->
+    <div class="burger-overlay"></div>
+    <div class="burger-background">
+      <div class="close-btn" onclick="closeMenu()">&times;</div>
+      <p class="menu-tittle">Меню</p>
+
+      <div class="menu-link">
+        <a href="#">Гайды</a>
         <a href="https://t.me/niko_bot_news">Новости</a>
         <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
-      </div>
-      <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
     </div>
 
@@ -51,6 +62,18 @@
           <img src="src/images/moderator.gif" alt="screenshot" class="image" loading="lazy">
         </div>
       </a>
+    </div>
+
+    <div class="space"></div>
+
+    <!-- Футер -->
+    <div class="footer-container">
+      <div class="footer">
+        <div class="block-info">
+          <p>Вы дошли до дна</p>
+          <p>(c) uriid1</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -24,9 +24,10 @@
   top: 15px;
   right: 35px;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
+  z-index: 2;
 }
 
 .close:hover,
@@ -34,4 +35,5 @@
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+  transform: scale(1.5);
 }

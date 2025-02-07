@@ -3,19 +3,20 @@
   justify-content: space-between;
   align-items: center;
 
-  background: #14022b;
-  padding: 0 15px;
+  width: 95%;
+  margin-top: 15px;
 
-  border-radius: 5px;
-  border-bottom: 2px solid #3f1d68;
+  background: #100e22;
+  border-bottom: 2px solid #363255;
+  border-radius: 4px;
 }
 
 .header .logo {
-  color: #d420ac;
   font-size: 44px;
   font-weight: bold;
-  padding: 10px 20px;
+  color: #b954a9;
   text-shadow: 2px 2px 0px #7940bd;
+  padding: 12px 25px;
 }
 
 .header a {
@@ -25,18 +26,20 @@
   font-size: 24px;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
   transition: border-bottom 0.1s ease, transform 0.3s ease;
-  border-radius: 10px;
 
-  border-bottom: 5px solid #14022b;
+  border-bottom: 5px solid #100e22;
 }
+
 .header a:hover {
-  border-bottom: 5px solid #ff9900;
+  color: #ebb87a;
+  border-bottom: 5px solid #ebb87a;
   transition: border-bottom 0.1s ease, transform 0.3s ease;
-  transform: rotate(5deg);
+  transform: scale(1.1);
+  transform: translate(0 ,10px);
 }
 
 .active {
-  border-bottom: 5px solid #8B5DFF;
+  border-bottom: 5px solid #ebb87a;
 }
 
 .header .links {
