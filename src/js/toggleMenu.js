@@ -1,11 +1,13 @@
-const burgerOverlay = document.getElementsByClassName("burger-overlay");
-const burgerBackground = document.getElementsByClassName("burger-background");
+const burgerOverlay = document.getElementsByClassName('burger-overlay')[0];
+const burgerBackground = document.getElementsByClassName('burger-background')[0];
 
-function toggleMenu() {
+function openMenu() {
   // Черный фон
-  burgerOverlay[0].style.display = "flex";
+  burgerOverlay.classList.add('show');
+  burgerOverlay.classList.remove("hiding");
   // Сама менюшка
-  burgerBackground[0].style.display = "flex";
+  burgerBackground.classList.add('show');
+  burgerBackground.classList.remove("hiding");
 
   // Отключение скрола
   const body = document.body;
@@ -14,9 +16,15 @@ function toggleMenu() {
 
 function closeMenu() {
   // Черный фон
-  burgerOverlay[0].style.display = "none";
+  burgerOverlay.classList.add("hiding");
   // Сама менюшка
-  burgerBackground[0].style.display = "none";
+  burgerBackground.classList.add("hiding");
+
+  // Завершение анимации перед скрытием
+  setTimeout(() => {
+    burgerBackground.classList.remove('show');
+    burgerOverlay.classList.remove('show');
+  }, 200)
 
   // Включение скрола скрола
   const body = document.body;
@@ -24,8 +32,8 @@ function closeMenu() {
 }
 
 // Закрытие меню при изменении размера окна
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   if (window.innerWidth > 500) {
-    document.querySelector(".links").classList.remove("active");
+    closeMenu();
   }
 });

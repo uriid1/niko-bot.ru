@@ -43,18 +43,21 @@
 }
 
 .burger-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9); /* Затемнение */
-  z-index: 9998; /* Чуть ниже, чем .burger-background */
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 9998;
 }
 
 .burger-background {
-  display: none;
+  visibility: hidden;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly; /* Равномерное распределение */
   /* Центрируем по горизонтали */
@@ -76,6 +79,35 @@
   transform: translate(-50%, -50%);
   z-index: 9999;
   border-radius: 6px;
+  border-bottom: 2px solid #312b5a;
+
+  /* Центрирование для правильной работы scale */
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+ 
+/* Активное состояние */
+.burger-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-background.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Анимация скрытия */
+.burger-background.hiding {
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+}
+
+.burger-overlay.hiding {
+  opacity: 0;
 }
 
 .burger-background .menu-tittle {
