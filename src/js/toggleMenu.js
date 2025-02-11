@@ -34,6 +34,7 @@ function closeMenu() {
 // Закрытие меню при изменении размера окна
 window.addEventListener('resize', function () {
   if (window.innerWidth > 500) {
-    closeMenu();
+    burgerBackground.classList.remove('show');
+    burgerOverlay.classList.remove('show');
   }
 });
