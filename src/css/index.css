@@ -55,12 +55,9 @@ a:hover.box {
   color: #e68cd8;
   text-decoration: none;
   font-weight: bold;
-  transition: font-size 0.4s ease;
 }
 
 .container-botInfo a:hover {
-  font-size: 30px;
-  transition: font-size 0.4s ease;
   color: #ebb87a;
 }
 /* --- */
