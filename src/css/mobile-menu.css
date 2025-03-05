@@ -48,7 +48,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
@@ -67,12 +67,12 @@
   top: 50%;
   left: 50%;
 
-  width: 80%;
-  min-height: 380px;
+  width: 70%;
+  min-height: 310px;
   max-height: 400px;
 
   height: 30%;
-  min-width: 350px;
+  min-width: 315px;
   max-width: 450px;
 
   background-color: #29244c;

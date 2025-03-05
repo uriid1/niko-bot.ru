@@ -26,7 +26,7 @@ function closeMenu() {
     burgerOverlay.classList.remove('show');
   }, 200)
 
-  // Включение скрола скрола
+  // Включение скрола
   const body = document.body;
   body.classList.toggle('no-scroll');
 }

@@ -41,6 +41,30 @@ a:hover.box {
   height: auto;
 }
 
+/* Контейнер описания */
+.container-botInfo {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  width: 90%;
+}
+
+.container-botInfo a {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #e68cd8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: font-size 0.4s ease;
+}
+
+.container-botInfo a:hover {
+  font-size: 30px;
+  transition: font-size 0.4s ease;
+  color: #ebb87a;
+}
+/* --- */
+
 .container {
   display: flex;
   flex-flow: row wrap;
@@ -69,4 +93,8 @@ a:hover.box {
 
 .space {
   padding: 5px;
+}
+
+.space-30 {
+  padding: 30px;
 }
