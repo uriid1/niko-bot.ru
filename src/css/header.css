@@ -12,11 +12,32 @@
 }
 
 .header .logo {
+  padding: 12px 25px;
   font-size: 44px;
   font-weight: bold;
-  color: #EC7FA9;
-  text-shadow: 2px 2px 0px #BE5985;
-  padding: 12px 25px;
+  background: linear-gradient(
+    to left,
+    #E9FF97 20%,
+    #FFD18E 30%,
+    #FFA38F 70%,
+    #FF7EE2 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .header a {
