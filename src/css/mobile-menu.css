@@ -3,7 +3,7 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding: 20px;
+  padding: 15px;
 }
 
 .burger .line {
@@ -34,7 +34,7 @@
   /* Создание круга */
   border-radius: 50%;
   /* Цвет фона круга */
-  background-color: #473f84;
+  background-color: #8373bd;
   transition: transform 0.3s ease;
 }
 
@@ -75,11 +75,11 @@
   min-width: 315px;
   max-width: 450px;
 
-  background-color: #29244c;
+  background-color: #3c2f6c;
   transform: translate(-50%, -50%);
   z-index: 9999;
   border-radius: 6px;
-  border-bottom: 2px solid #312b5a;
+  border: 2px solid #77729f73;
 
   /* Центрирование для правильной работы scale */
   transform: translate(-50%, -50%) scale(0);
@@ -124,15 +124,16 @@
 }
 
 .burger-background .menu-link a {
-  color: #f7dec1;
+  color: #e999ff;
   font-size: 30px;
   text-decoration: none;
+
   margin-left: 40px;
   transition: transform 0.3s ease;
 }
 
 .burger-background .menu-link a:hover {
-  color: #9c96f7;
+  color: #60daff;
   font-size: 30px;
   text-decoration: none;
   margin-left: 40px;

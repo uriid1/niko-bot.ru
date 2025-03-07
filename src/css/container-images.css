@@ -27,7 +27,7 @@ details {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #69629c;
+  background-color: #69629c50;
 }
 
 details.warning {
@@ -35,7 +35,7 @@ details.warning {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #b285a0;
+  background-color: #b285a050;
 }
 
 summary {

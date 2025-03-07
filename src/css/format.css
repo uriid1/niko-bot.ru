@@ -10,12 +10,13 @@ h3.headlines {
 code {
   font-size: 16px;
 
-  background-color: #797eb0;
+  background-color: #00ffff2b;
   transition: transform 0.1s ease;
 
   /*  Без переноса на новую строку*/
   display: inline-block;
-  padding: 0px 2px;
+  padding: 0px 7px;
+  border-radius: 5px;
 }
 
 code:hover {

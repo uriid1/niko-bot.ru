@@ -20,18 +20,19 @@ p {
 }
 
 a.box {
+  color: #fff;
+
   font-family: 'Arial', sans-serif;
   font-size: 14px;
-  color: #fff;
   text-decoration: none;
   font-weight: bold;
   transition: font-size 0.4s ease;
 }
 
 a:hover.box {
+  color: #60daff;
   font-size: 16px;
   transition: font-size 0.4s ease;
-  color: #ebb87a;
 }
 
 .image {
@@ -49,15 +50,16 @@ a:hover.box {
 }
 
 .container-botInfo a {
+  color: #e999ff;
+
   font-family: 'Arial', sans-serif;
   font-size: 24px;
-  color: #e68cd8;
   text-decoration: none;
   font-weight: bold;
 }
 
 .container-botInfo a:hover {
-  color: #ebb87a;
+  color: #60daff;
 }
 /* --- */
 
@@ -84,7 +86,7 @@ a:hover.box {
   padding: 20px;
   border-radius: 6px;
   background: rgba(87, 80, 141, 0.5);
-  border-bottom: 2px solid #77729f;
+  border: 2px solid #77729f73;
 }
 
 .space {
