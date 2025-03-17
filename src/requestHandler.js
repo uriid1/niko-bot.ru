@@ -23,12 +23,15 @@ async function GET(req, res) {
   const file = await getFile(filePath, SITE_DIR);
 
   if (!file) {
-    res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+    res.writeHead(404, {'Content-Type': 'text/html; charset=UTF-8' });
     res.end('<h1>404 Not Found</h1>');
     return;
   }
 
-  res.writeHead(200, { 'Content-Type': file.contentType });
+  res.writeHead(200, {
+    'Content-Type': file.contentType,
+    'Cache-Control': 'public, max-age=604800, must-revalidate'
+  });
   res.end(file.data);
 }
 
