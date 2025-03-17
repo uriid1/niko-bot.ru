@@ -1,7 +1,9 @@
 import path from 'path';
 import { URL } from 'url';
 import { appendFile, writeFile, access } from 'node:fs/promises';
+import { pipeline } from 'node:stream';
 import { parse } from 'querystring';
+import Busboy from 'busboy';
 import { getFile } from './fileHandler.js';
 
 const SITE_DIR = path.resolve('site');
@@ -43,29 +45,19 @@ async function POST(req, res) {
 
   // Тестовая запись лога
   if (refererUrl.pathname === '/pages/test-form/') {
-    const chunks = [];
-    
-    req.on('data', chunk => {
-      chunks.push(chunk);
+    const busboy = Busboy({ headers: req.headers });
+
+    const formData = {};
+    busboy.on('field', (fieldname, val) => {
+      formData[fieldname] = val;
     });
 
-    req.on('end', async () => {
-      const buffer = Buffer.concat(chunks);
-      const formData = parse(buffer.toString());
-
+    busboy.on('finish', async () => {
       const date = new Date().toISOString();
-      const logEntry = `Date: ${date}\nИмя: ${formData.username} Сообщение: ${formData.message}\n\n`;
+      const logEntry = `Дата: ${date} | Имя: ${formData.username} | Сообщение: ${formData.message}\n\n`;
 
       try {
-        await access(LOG_FILE);
-      } catch (err) {
-        await writeFile(LOG_FILE, '', 'utf8');
-      }
-
-      try {
-        // Запись в файл с использованием fs.promises
         await appendFile(LOG_FILE, logEntry);
-
         res.writeHead(200, { 'Content-Type': 'text/html; charset=UTF-8' });
         res.end('<h1>Форма отправлена успешно!</h1>');
       } catch (err) {
@@ -73,6 +65,13 @@ async function POST(req, res) {
         res.end('<h1>Ошибка сервера</h1>');
       }
     });
+
+    pipeline(req, busboy, (err) => {
+      if (err) console.error('Pipeline error:', err);
+    });
+  } else {
+    res.writeHead(400, { 'Content-Type': 'text/html; charset=UTF-8' });
+    res.end('<h1>Некорректный запрос</h1>');
   }
 }
 
