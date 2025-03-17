@@ -1,15 +1,15 @@
 #!/bin/bash
 
 BASE_URL="https://niko-bot.ru"
-PAGES_DIR="src/pages"
-SITEMAP_FILE="sitemap.xml"
+PAGES_DIR="site/pages"
+SITEMAP_FILE="site/sitemap.xml"
 
 # Загаловок
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" > $SITEMAP_FILE
 echo "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">" >> $SITEMAP_FILE
 
 # Главная страница
-lastmod=$(stat -c "%Y" "index.html" | awk '{print strftime("%Y-%m-%d", $1)}')
+lastmod=$(stat -c "%Y" "site/index.html" | awk '{print strftime("%Y-%m-%d", $1)}')
 echo "  <url>"                             >> $SITEMAP_FILE
 echo "    <loc>$BASE_URL/</loc>"           >> $SITEMAP_FILE
 echo "    <lastmod>$lastmod</lastmod>"     >> $SITEMAP_FILE

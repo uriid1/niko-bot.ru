@@ -10,7 +10,7 @@ body {
 
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
   font-size: 16px;
-  color: #fff;
+  color: $c_pure_white;
 
   min-height: 100vh;
 }
@@ -20,7 +20,7 @@ p {
 }
 
 a.box {
-  color: #fff;
+  color: $c_pure_white;
 
   font-family: 'Arial', sans-serif;
   font-size: 14px;
@@ -30,7 +30,7 @@ a.box {
 }
 
 a:hover.box {
-  color: #60daff;
+  color: $c_soft_cyan;
   font-size: 16px;
   transition: font-size 0.4s ease;
 }
@@ -50,7 +50,7 @@ a:hover.box {
 }
 
 .container-botInfo a {
-  color: #e999ff;
+  color: $c_soft_lavender;
 
   font-family: 'Arial', sans-serif;
   font-size: 24px;
@@ -59,7 +59,7 @@ a:hover.box {
 }
 
 .container-botInfo a:hover {
-  color: #60daff;
+  color: $c_soft_cyan;
 }
 /* --- */
 
@@ -86,7 +86,7 @@ a:hover.box {
   padding: 20px;
   border-radius: 6px;
   background: rgba(87, 80, 141, 0.5);
-  border: 2px solid #77729f73;
+  border: 2px solid $c_soft_indigo_transparent;
 }
 
 .space {

@@ -27,7 +27,7 @@ details {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #69629c50;
+  background-color: $c_light_indigo_transparent;
 }
 
 details.warning {
@@ -35,10 +35,10 @@ details.warning {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #b285a050;
+  background-color: $c_light_lavender_transparent;
 }
 
 summary {
-  color: #fff;
+  color: $c_pure_white;
   font-size: 18px;
 }

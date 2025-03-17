@@ -10,7 +10,7 @@ h3.headlines {
 code {
   font-size: 16px;
 
-  background-color: #00ffff2b;
+  background-color: $c_light_cyan_transparent;
   transition: transform 0.1s ease;
 
   /*  Без переноса на новую строку*/

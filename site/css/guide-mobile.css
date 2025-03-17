@@ -18,7 +18,7 @@
     margin-top: 0;
     border-radius: 0px;
     border: 0;
-    border-bottom: 2px solid #77729f73;
+    border-bottom: 2px solid $c_soft_indigo_transparent;
   }
   .header a {
     font-size: 20px;
@@ -31,7 +31,7 @@
     margin-bottom: 0;
     border-radius: 0px;
     border: 0;
-    border-top: 2px solid #77729f73;
+    border-top: 2px solid $c_soft_indigo_transparent;
   }
 }
 

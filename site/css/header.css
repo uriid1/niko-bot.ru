@@ -6,8 +6,8 @@
   width: 95%;
   margin-top: 15px;
 
-  background: #4a447d52;
-  border: 2px solid #77729f73;
+  background: $c_medium_indigo_transparent;
+  border: 2px solid $c_soft_indigo_transparent;
   border-radius: 4px;
 }
 
@@ -45,14 +45,14 @@
 /* Первый слой глитча с розовым смещением */
 .logo-glitch::before {
   animation: glitchBefore 3s infinite;
-  text-shadow: 2px 0 #ff00ff;
+  text-shadow: 2px 0 $c_bright_magenta;
   z-index: -1;
 }
 
 /* Второй слой глитча с голубым смещением */
 .logo-glitch::after {
   animation: glitchAfter 3s infinite;
-  text-shadow: -2px 0 #00ffff;
+  text-shadow: -2px 0 $c_bright_cyan;
   z-index: -2;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .header a {
-  color: #fff;
+  color: $c_pure_white;
   text-decoration: none;
   padding: 20px 30px;
   font-size: 24px;
@@ -93,13 +93,13 @@
 }
 
 .header a:hover {
-  color: #60daff;
+  color: $c_soft_cyan;
 
   transform: translate(0 ,10px);
 }
 
 .active {
-  border-bottom: 5px solid #ebb87a;
+  border-bottom: 5px solid $c_warm_orange;
 }
 
 .header .links {

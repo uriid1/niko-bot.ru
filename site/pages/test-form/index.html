@@ -2,34 +2,32 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <meta charset="windows-1251"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест формы</title>
-    <link rel="stylesheet" type="text/css" href="/../../../src/css/background.css">
+    <link rel="stylesheet" type="text/css" href="/css/background.css">
     <link rel="stylesheet" type="text/css" href="index.css">
+    $raw{/js/clickfraud.tmpl}
+    $raw{/js/yandex-metrika.tmpl}
   </head>
 
   <body>
-    <form action="#" method="post" class="test-form">
+    <form id="testForm" action="/test-form" method="post" class="test-form">
       <div class="form-group">
         <label for="username" class="ctext">Имя</label>
         <input type="text" id="username" name="username" required>
       </div>
-      
-      <div class="form-group">
-        <label for="email" class="ctext">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      
+
       <div class="form-group">
         <label for="message" class="ctext">Сообщение</label>
         <textarea id="message" name="message" rows="4" required></textarea>
       </div>
-      
+
       <button type="submit">Отправить</button>
+      <span id="successMessage" class="sendText">Отправлено!</span>
     </form>
 
     <div class="bg-pattern"></div>
+
+    <script src="index.js"></script>
   </body>
 </html>

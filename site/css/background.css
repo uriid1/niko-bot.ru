@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at center, #4a4285, #29244c);
+  background: radial-gradient(circle at center, $c_deep_indigo, $c_dark_indigo);
 }
 
 .bg-pattern {

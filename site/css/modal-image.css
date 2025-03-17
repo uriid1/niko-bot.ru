@@ -23,7 +23,7 @@
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
+  color: $c_light_gray;
   font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
@@ -32,7 +32,7 @@
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: $c_medium_gray;
   text-decoration: none;
   cursor: pointer;
   transform: scale(1.5);
