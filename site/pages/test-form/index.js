@@ -9,21 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Отменяем стандартную отправку формы
     event.preventDefault();
 
-    const formData = new FormData(form);
+    // Собираем данные в объект
+    const formData = {
+      username: usernameInput.value,
+      message: messageInput.value
+    };
+
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
       if (response.ok) {
         successMessage.style.display = 'inline';
       } else {
-        console.error('Ошибка при отправке формы');
+        console.error(response);
       }
     } 
     catch (err) {
-      console.error('Ошибка сети:', err);
+      console.error('Error:', err);
     }
   });
 

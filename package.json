@@ -1,6 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "busboy": "^1.6.0"
-  }
-}
