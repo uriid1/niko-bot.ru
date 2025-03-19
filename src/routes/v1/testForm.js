@@ -6,10 +6,10 @@ import { appendFile, writeFile } from 'node:fs/promises';
 const LOG_FILE = path.join('site', 'pages', 'test-form', 'log.txt');
 
 async function testForm(req, res) {
-  console.log(req.headers['content-type']);
   if (req.headers['content-type'] !== 'application/json') {
     res.writeHead(400, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ status: 400, reason: 'Bad Request' }));
+
     return;
   }
 
@@ -21,7 +21,7 @@ async function testForm(req, res) {
   });
 
   req.on('end', async () => {
-    const { username, message } = data;
+    const { username, message } = JSON.parse(data);
 
     const date = new Date().toISOString();
     const logEntry = `Дата: ${date} | Имя: ${username} | Сообщение: ${message}\n\n`;

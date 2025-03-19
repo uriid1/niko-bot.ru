@@ -18,6 +18,13 @@ const SITE_DIR = path.resolve('site');
 async function GET(req, res) {
   let url = req.url;
 
+  if (!url.endsWith('/') && !path.extname(url)) {
+    res.writeHead(301, { 'Location': url + '/' });
+    res.end();
+
+    return
+  }
+
   if (url.endsWith('/')) {
     url = path.join(url, 'index.html');
   }
