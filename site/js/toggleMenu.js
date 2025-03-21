@@ -30,8 +30,10 @@ function closeMenu() {
 
   // Завершение анимации перед скрытием
   setTimeout(() => {
-    burgerPanel.classList.remove("show")
-    burgerOverlay.classList.remove("show")
+    if (burgerPanel && burgerOverlay) {
+      burgerPanel.classList.remove("show")
+      burgerOverlay.classList.remove("show")
+    }
   }, 200)
 
   // Включение скрола
@@ -41,9 +43,11 @@ function closeMenu() {
 // Закрытие меню при изменении размера окна
 window.addEventListener("resize", () => {
   if (window.innerWidth > 500) {
-    burgerPanel.classList.remove("show")
-    burgerOverlay.classList.remove("show")
-    body.classList.remove("no-scroll")
+    if (burgerPanel && burgerOverlay) {
+      burgerPanel.classList.remove("show")
+      burgerOverlay.classList.remove("show")
+      body.classList.remove("no-scroll")
+    }
   }
 })
 

@@ -29,12 +29,12 @@
 
   .site-footer {
     width: 100%;
+    margin: 0;
   }
   .site-footer__content {
     margin-bottom: 0;
     border-radius: 0px;
     border: 0;
-    border-top: 2px solid var(--color-border-primary);
   }
 }
 
