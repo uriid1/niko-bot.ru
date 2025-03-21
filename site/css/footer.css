@@ -1,30 +1,56 @@
-.footer-container {
+.site-footer {
   display: flex;
-  justify-content: flex-end;
-
-  align-items: center;
-  width: 95%;
-}
-
-.footer-container .footer {
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 95%;
 
-  background: $c_medium_indigo_transparent;
-  border: 2px solid $c_soft_indigo_transparent;
+  background: var(--color-bg-container);
+  border: 2px solid var(--color-border-primary);
   border-radius: 4px;
-
-  width: 100%;
   margin-bottom: 15px;
 }
 
-.footer-container .footer .block-info {
+.site-footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+
   padding-left: 20px;
+  padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.footer-container .footer .block-info p {
-  margin: 5px;
+/* Послежний элемнт выравнивается по правому краю */
+.site-footer__content:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Стили для кнопки смены темы */
+#theme-toggle {
+  border: 2px solid #6a5acd;
+  background: rgb(0, 0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  border: 2px solid #5a4fcf;
+  transform: scale(1.05);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
 }

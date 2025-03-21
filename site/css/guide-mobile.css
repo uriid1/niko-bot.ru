@@ -5,7 +5,7 @@
     padding: 0px;
   }
 
-  .container {
+  .content-container {
     width: 90%;
   }
 
@@ -13,30 +13,34 @@
   .logo-glitch {
     display: none;
   }
-  .header {
+  .site-header {
     width: 100%;
     margin-top: 0;
     border-radius: 0px;
     border: 0;
-    border-bottom: 2px solid $c_soft_indigo_transparent;
+    border-bottom: 2px solid var(--color-border-primary);
   }
-  .header a {
+  .site-header__nav-link {
     font-size: 20px;
   }
+  .site-header__nav {
+    justify-content: center;
+  }
 
-  .footer-container {
+  .site-footer {
     width: 100%;
   }
-  .footer-container .footer {
+  .site-footer__content {
     margin-bottom: 0;
     border-radius: 0px;
     border: 0;
-    border-top: 2px solid $c_soft_indigo_transparent;
+    border-top: 2px solid var(--color-border-primary);
   }
 }
 
 @media (max-width: 500px) {
-  .container {
+  .content-container {
     width: 95%;
   }
 }
+

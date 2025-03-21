@@ -1,19 +1,19 @@
 /* Кнопка-бургер */
-.burger {
+.burger-menu {
   display: none;
   flex-direction: column;
   cursor: pointer;
   padding: 15px;
 }
 
-.burger .line {
+.burger-menu__line {
   width: 30px;
   height: 4px;
   margin: 5px 0;
-  background-color: $c_pure_white;
+  background-color: var(--color-text-primary);
 }
 
-.close-btn {
+.burger-menu__close {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +34,11 @@
   /* Создание круга */
   border-radius: 50%;
   /* Цвет фона круга */
-  background-color: $c_soft_indigo;
+  background-color: var(--color-button-primary);
   transition: transform 0.3s ease;
 }
 
-.close-btn:hover {
+.burger-menu__close:hover {
   transform: scale(1.3);
 }
 
@@ -55,7 +55,7 @@
   z-index: 9998;
 }
 
-.burger-background {
+.burger-menu__panel {
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -75,11 +75,11 @@
   min-width: 315px;
   max-width: 450px;
 
-  background-color: $c_deep_purple;
+  background-color: var(--color-bg-menu);
   transform: translate(-50%, -50%);
   z-index: 9999;
   border-radius: 6px;
-  border: 2px solid $c_soft_indigo_transparent;
+  border: 2px solid var(--color-border-primary);
 
   /* Центрирование для правильной работы scale */
   transform: translate(-50%, -50%) scale(0);
@@ -87,21 +87,21 @@
   visibility: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
- 
+
 /* Активное состояние */
 .burger-overlay.show {
   opacity: 1;
   visibility: visible;
 }
 
-.burger-background.show {
+.burger-menu__panel.show {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
   visibility: visible;
 }
 
 /* Анимация скрытия */
-.burger-background.hiding {
+.burger-menu__panel.hiding {
   transform: translate(-50%, -50%) scale(0.1);
   opacity: 0;
 }
@@ -110,12 +110,12 @@
   opacity: 0;
 }
 
-.burger-background .menu-tittle {
+.burger-menu__title {
   align-self: center;
   font-size: 40px;
 }
 
-.burger-background .menu-link {
+.burger-menu__nav {
   display: flex;
   flex-direction: column;
   /* Выравниваем ссылки влево */
@@ -123,8 +123,8 @@
   gap: 20px;
 }
 
-.burger-background .menu-link a {
-  color: $c_soft_lavender;
+.burger-menu__link {
+  color: var(--color-link-primary);
   font-size: 30px;
   text-decoration: none;
 
@@ -132,8 +132,8 @@
   transition: transform 0.3s ease;
 }
 
-.burger-background .menu-link a:hover {
-  color: $c_soft_cyan;
+.burger-menu__link:hover {
+  color: var(--color-link-hover);
   font-size: 30px;
   text-decoration: none;
   margin-left: 40px;
@@ -143,19 +143,19 @@
 
 /* Мобильное меню */
 @media (max-width: 500px) {
-  .header {
+  .site-header {
     border-radius: none;
   }
 
-  .header .links {
+  .site-header__nav {
     display: none;
   }
 
-  .burger {
+  .burger-menu {
     display: flex;
   }
 
-  .header .links.active {
+  .site-header__nav.active {
     display: flex;
   }
 }
@@ -163,3 +163,4 @@
 .no-scroll {
   overflow: hidden;
 }
+

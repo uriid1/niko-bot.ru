@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -10,18 +11,18 @@ body {
 
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
   font-size: 16px;
-  color: $c_pure_white;
+  color: var(--color-text-primary);
 
   min-height: 100vh;
 
-  background: radial-gradient(ellipse at center, $c_deep_indigo, $c_dark_indigo);
+  background: radial-gradient(ellipse at center, var(--color-bg-primary), var(--color-bg-secondary));
 }
 
-p { 
+p {
   margin: 5px;
 }
 
-.container {
+.content-container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -33,7 +34,7 @@ p {
   max-width: 800px;
 }
 
-.container .title-section {
+.section-header {
   display: flex;
   /* Центрирует элементы по вертикали */
   align-items: center;
@@ -46,91 +47,91 @@ p {
   padding: 20px;
   text-align: left;
 
-  background: $c_muted_blue;
+  background: var(--color-heading-bg);
 
-  border-top-color: $c_light_indigo_semi_transparent;
+  border-top-color: var(--color-border-primary);
   border-right-width: 2px;
   border-right-style: solid;
-  border-right-color: $c_light_indigo_semi_transparent;
+  border-right-color: var(--color-border-primary);
   border-top-width: 2px;
   border-top-style: solid;
-  border-top-color: $c_light_indigo_semi_transparent;
+  border-top-color: var(--color-border-primary);
   border-left-width: 2px;
   border-left-style: solid;
-  border-left-color: $c_light_indigo_semi_transparent;
+  border-left-color: var(--color-border-primary);
 
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-.container .content-section {
+.section-content {
   font-size: 16px;
-  
+
   padding-inline: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  background: $c_medium_indigo_semi_transparent;
+  background: var(--color-bg-container-alt);
 
-  border-top-color: $c_light_indigo_semi_transparent;
+  border-top-color: var(--color-border-primary);
   border-right-width: 2px;
   border-right-style: solid;
-  border-right-color: $c_light_indigo_semi_transparent;
+  border-right-color: var(--color-border-primary);
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: $c_light_indigo_semi_transparent;
+  border-bottom-color: var(--color-border-primary);
   border-left-width: 2px;
   border-left-style: solid;
-  border-left-color: $c_light_indigo_semi_transparent;
+  border-left-color: var(--color-border-primary);
 
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.container .content-section a {
-  color: $c_soft_lavender;
+.section-content a {
+  color: var(--color-link-primary);
   text-decoration: none;
   font-weight: bold;
 }
 
-.container .content-section a:hover {
-  color: $c_pale_cyan;
+.section-content a:hover {
+  color: var(--color-link-hover);
 }
 
-.container .content-section .union p {
+.section-content .list-indented p {
   margin: 10px;
   padding-left: 15px;
 }
 
-.container .space {
+.content-container .spacer {
   padding: 2px;
 }
 
-.content-section .warning {
-  background-color: $c_light_orange_transparent;
+.section-content .warning-text {
+  background-color: var(--color-bg-warning);
   padding: 10px;
   font-weight: bold;
   border-radius: 6px;
 }
 
-.container .section-space {
+.content-container .section-spacer {
   padding: 10px;
 }
 
 /* Класс контейнера для предупреждений */
-.container .warning-info {
+.content-container .warning-box {
   padding-inline: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 
   border-radius: 6px;
-  border: 2px solid $c_muted_lavender;
+  border: 2px solid var(--color-border-info);
 
-  background: $c_deep_lavender;
+  background: var(--color-bg-info);
 }
 
-.container .warning-info a {
-  color: $c_pure_white;
+.content-container .warning-box a {
+  color: var(--color-text-primary);
 
   font-size: 18px;
   text-decoration: none;
@@ -138,26 +139,26 @@ p {
   font-weight: bold;
 }
 
-.container .warning-info a:hover {
-  color: $c_soft_red;
+.content-container .warning-box a:hover {
+  color: var(--color-link-warning);
   font-size: 20px;
   transition: color 0.4s ease, font-size 0.4s ease;
 }
 
 /* Класс контейнера для содержания */
-.container .content-info {
-  background: $c_dark_indigo_transparent;
+.content-container .toc {
+  background: var(--color-bg-content);
 
   padding-inline: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 6px;
 
-  border: 2px solid $c_medium_indigo_transparent_alt;
+  border: 2px solid var(--color-border-alt);
 }
 
-.container .content-info a {
-  color: $c_pastel_lavender;
+.content-container .toc a {
+  color: var(--color-link-secondary);
 
   display: inline-block;
 
@@ -168,13 +169,13 @@ p {
   transition: color 0.4s ease, font-size 0.4s ease;
 }
 
-.container .content-info a:hover {
-  color: $c_soft_cyan;
+.content-container .toc a:hover {
+  color: var(--color-link-hover);
   font-size: 20px;
   transition: font-size 0.4s ease;
 }
 
-.footer-space {
+.footer-spacer {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -182,3 +183,4 @@ p {
 
   flex: 1;
 }
+

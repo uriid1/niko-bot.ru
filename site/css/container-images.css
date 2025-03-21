@@ -7,7 +7,7 @@
 }
 
 /* Класс для скриншотов в контейнере */
-.container .screenshot {
+.content-container .screenshot {
   width: 100%;
   max-width: 600px;
   height: auto;
@@ -17,28 +17,29 @@
   border-radius: 6px;
 }
 
-.container .screenshot:hover {
+.content-container .screenshot:hover {
   transform: scale(1.05);
 }
 
 /* Спойлер для картинок */
-details {
+.collapsible {
   margin-top: 20px;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: $c_light_indigo_transparent;
+  background-color: var(--color-border-secondary);
 }
 
-details.warning {
+.collapsible--warning {
   margin-top: 20px;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: $c_light_lavender_transparent;
+  background-color: var(--color-bg-warning);
 }
 
-summary {
-  color: $c_pure_white;
+.collapsible__summary {
+  color: var(--color-text-primary);
   font-size: 18px;
 }
+

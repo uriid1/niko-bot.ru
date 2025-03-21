@@ -3,13 +3,13 @@
   position: fixed;
   z-index: 1;
   inset: 0; /* Эквивалентно top: 0; right: 0; bottom: 0; left: 0; */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-bg-modal);
   overflow: auto;
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
+.modal__image {
   width: 70%;
   height: auto;
   max-width: 900px;
@@ -19,21 +19,22 @@
   object-fit: contain;
 }
 
-.close {
+.modal__close {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: $c_light_gray;
+  color: var(--color-text-secondary);
   font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
   z-index: 2;
 }
 
-.close:hover,
-.close:focus {
-  color: $c_medium_gray;
+.modal__close:hover,
+.modal__close:focus {
+  color: var(--color-text-tertiary);
   text-decoration: none;
   cursor: pointer;
   transform: scale(1.5);
 }
+

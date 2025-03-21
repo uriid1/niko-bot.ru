@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="windows-1251"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>niko-bot - Главная</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link id="theme-link" rel="stylesheet" href="css/theme-light.css">
     <link rel="stylesheet" type="text/css" href="css/background.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -18,75 +20,131 @@
   </head>
 
   <body>
+    <script src="/js/changeTheme.js" defer></script>
     <script src="/js/toggleMenu.js" defer></script>
 
     <!-- Шапка сайта -->
-    <div class="header">
+    <header class="site-header">
       <div class="logo-glitch">Niko Bot</div>
-      <div class="links">
-        <a href="#">Гайды</a>
-        <a href="https://t.me/niko_bot_news">Новости</a>
-        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
-      </div>
+      <nav class="site-header__nav">
+        <a href="#" class="site-header__nav-link">Гайды</a>
+        <a href="https://t.me/niko_bot_news" class="site-header__nav-link">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat" class="site-header__nav-link">Донат</a>
+      </nav>
 
       <!-- Мобильное меню -->
-      <div class="burger" onclick="openMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="burger-menu" onclick="openMenu()" aria-label="Открыть меню">
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
       </div>
-    </div>
+    </header>
 
     <!-- Фон для мобильного меню -->
     <div class="burger-overlay"></div>
-    <div class="burger-background">
-      <div class="close-btn" onclick="closeMenu()">&times;</div>
-      <p class="menu-tittle">Меню</p>
+    <div class="burger-menu__panel">
+      <div class="burger-menu__close" onclick="closeMenu()" aria-label="Закрыть меню">&times;</div>
+      <p class="burger-menu__title">Меню</p>
 
-      <div class="menu-link">
-        <a href="#">Гайды</a>
-        <a href="https://t.me/niko_bot_news">Новости</a>
-        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
+      <nav class="burger-menu__nav">
+        <a href="#" class="burger-menu__link">Гайды</a>
+        <a href="https://t.me/niko_bot_news" class="burger-menu__link">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat" class="burger-menu__link">Донат</a>
+      </nav>
+    </div>
+
+    <section class="bot-info">
+      <h2>Главная страница телеграм бота <a href="https://t.me/niko_rp_bot" class="highlight">@niko_rp_bot</a></h2>
+      <p class="subtitle">Фановый проект, в котором можно очень много всего!</p>
+
+      <div class="cta-buttons">
+        <a href="https://t.me/niko_rp_bot" class="primary-btn">Открыть в Telegram</a>
       </div>
-    </div>
+    </section>
 
-    <div class="space"></div>
+    <div class="spacer"></div>
 
-    <div class="container-botInfo">
-      <h2>Главная страница телеграм бота <a href="https://t.me/Niko_rp_bot">@niko_rp_bot</a></h2>
-      <p>Фановый проект, в котором можно очень много всего!</p>
-    </div>
+    <h2 class="title">Гайды / Туторы</h2>
+    <div class="line"></div>
 
-    <div class="space"></div>
-
-    <div class="container">
-      <a href="pages/commands-guide/" class="box">
-        <div class="content-section">
+    <main class="card-container">
+      <a href="pages/commands-guide/" class="card-link">
+        <div class="card">
           <h3>Гайд по основным игровым командам</h3>
-          <img src="/images/gaming.gif" alt="screenshot" class="image" loading="lazy">
+          <img src="/images/gaming.gif" alt="Анимация игровых команд" class="card-image" loading="lazy">
         </div>
       </a>
 
-      <a href="pages/mod-commands-guide/" class="box">
-        <div class="content-section">
+      <a href="pages/mod-commands-guide/" class="card-link">
+        <div class="card">
           <h3>Гайд по модераторским командам</h3>
-          <img src="/images/moderator.gif" alt="screenshot" class="image" loading="lazy">
+          <img src="/images/moderator.gif" alt="Анимация модераторских команд" class="card-image" loading="lazy">
         </div>
       </a>
-    </div>
+    </main>
 
-    <div class="space"></div>
+    <div class="spacer"></div>
+
+    <h2 class="title">Возможности бота</h2>
+    <div class="line"></div>
+
+    <!-- Новая секция с описанием возможностей бота -->
+    <section class="features-container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👤</div>
+          <h3>Профиль и персонализация</h3>
+          <p>Создайте уникальный профиль, выберите расу и возраст, заключайте браки с другими игроками</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎮</div>
+          <h3>Мини-игры</h3>
+          <p>Множество развлекательных мини-игр для одиночной игры и соревнований с друзьями</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎣</div>
+          <h3>Рыбалка и добыча ресурсов</h3>
+          <p>Ловите рыбу, добывайте ресурсы в руднике и развивайте свою экономику</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Экономика и торговля</h3>
+          <p>Зарабатывайте валюту, торгуйте с другими игроками и управляйте своим инвентарем</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Рейтинги и достижения</h3>
+          <p>Соревнуйтесь с другими игроками и попадайте в топы по различным показателям</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎭</div>
+          <h3>РП команды</h3>
+          <p>Используйте ролевые команды для взаимодействия с другими игроками в чатах</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Расширяемое пространство для футера -->
+    <div class="space-footer"></div>
 
     <!-- Футер -->
-    <div class="footer-container">
-      <div class="footer">
-        <div class="block-info">
-          <p>Адрес сайта используется как VPN, за денюшку!</p>
-          <p>(c) uriid1</p>
-        </div>
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>(c) uriid1</p>
+        <p>Адрес сайта используется как VPN, за денюшку!</p>
       </div>
-    </div>
+
+      <div class="site-footer__content">
+        <button id="theme-toggle">Night Theme</button>
+      </div>
+    </footer>
 
     <div class="bg-pattern"></div>
   </body>
 </html>
+

@@ -1,6 +1,5 @@
 import { readFile } from 'node:fs/promises';
 import path from 'path';
-import defaultColors from './enums/defaultColors.js';
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -57,24 +56,6 @@ async function processHTMLTemplate(content, filePath, rootPath) {
   return content;
 }
 
-const colorVariableRegex = /\$([a-zA-Z_]\w*)/g;
-
-async function processCSSTemplate(content) {
-  content = content.replace(colorVariableRegex, (match, variableName) => {
-    if (defaultColors[variableName]) {
-      return defaultColors[variableName];
-    }
-    else {
-      // Если переменная не найдена в defaultColors, оставляем её без изменений
-      console.warn(`Unknown color variable: ${variableName}`);
-
-      return match;
-    }
-  });
-
-  return content;
-}
-
 async function getFile(filePath, rootPath) {
   const ext = path.extname(filePath).toLowerCase();
 
@@ -92,9 +73,6 @@ async function getFile(filePath, rootPath) {
     // Применение шаблонизаторов
     if (ext === '.html') {
       data = await processHTMLTemplate(data, filePath, rootPath);
-    }
-    else if (ext === '.css') {
-      data = await processCSSTemplate(data);
     }
   }
 

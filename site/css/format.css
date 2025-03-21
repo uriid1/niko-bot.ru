@@ -1,16 +1,15 @@
-h2.headlines {
+h2.section-title {
   margin-bottom: 10px;
 }
 
-h3.headlines {
+h3.section-subtitle {
   margin-bottom: 10px;
 }
 
 /* Класс для команд */
-code {
+.command-code {
   font-size: 16px;
-
-  background-color: $c_light_cyan_transparent;
+  background-color: var(--color-code-bg);
   transition: transform 0.1s ease;
 
   /*  Без переноса на новую строку*/
@@ -19,14 +18,14 @@ code {
   border-radius: 5px;
 }
 
-code:hover {
+.command-code:hover {
   transform: scale(1.1);
   transition: transform 0.1s ease;
   cursor: crosshair;
 }
 
 /* Картинка с тегом p */
-.p-img {
+.text-with-image {
   display: flex;
   align-items: center;
   gap: 8px;

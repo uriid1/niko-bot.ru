@@ -1,0 +1,9 @@
+/* Без анимации по умолчанию */
+* {
+  transition: none;
+}
+
+/* Включаем плавную смену темы только когда активен класс */
+html.theme-transition * {
+  transition: all 0.3s ease;
+}

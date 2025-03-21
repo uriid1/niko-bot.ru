@@ -1,4 +1,4 @@
-.header {
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,9 +6,35 @@
   width: 95%;
   margin-top: 15px;
 
-  background: $c_medium_indigo_transparent;
-  border: 2px solid $c_soft_indigo_transparent;
+  background: var(--color-bg-container);
+  border: 2px solid var(--color-border-primary);
   border-radius: 4px;
+}
+
+.site-header__nav-link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 20px 30px;
+  font-size: 24px;
+
+  transition: color 0.1s ease, transform 0.3s ease;
+}
+
+.site-header__nav-link:hover {
+  color: var(--color-link-hover);
+  transform: translate(0, 10px);
+}
+
+.site-header__nav-link--active {
+  border-bottom: 5px solid var(--color-accent);
+}
+
+.site-header__nav {
+  display: flex;
+  justify-content: right;
+  padding-right: 20px;
+  gap: 10px;
+  flex-grow: 1;
 }
 
 /* Базовый стиль для текста с эффектом глитча */
@@ -17,7 +43,7 @@
   font-size: 44px;
   font-weight: bold;
 
-  padding: 12px 25px;
+  padding: 12px 45px;
 
   position: relative;
   font-size: 44px;
@@ -29,7 +55,8 @@
 /* Псевдоэлементы для создания эффекта глитча */
 .logo-glitch::before,
 .logo-glitch::after {
-  padding: 12px 25px;
+  padding: 12px 45px;
+
   content: "Niko Bot";
   position: absolute;
   top: 0;
@@ -45,66 +72,74 @@
 /* Первый слой глитча с розовым смещением */
 .logo-glitch::before {
   animation: glitchBefore 3s infinite;
-  text-shadow: 2px 0 $c_bright_magenta;
+  text-shadow: 2px 0 var(--color-glitch-primary);
   z-index: -1;
 }
 
 /* Второй слой глитча с голубым смещением */
 .logo-glitch::after {
   animation: glitchAfter 3s infinite;
-  text-shadow: -2px 0 $c_bright_cyan;
+  text-shadow: -2px 0 var(--color-glitch-secondary);
   z-index: -2;
 }
 
 /* Анимация для основного текста */
 @keyframes glitchText {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
 }
 
 /* Анимация для первого псевдоэлемента */
 @keyframes glitchBefore {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(3px, -3px); }
-  40% { transform: translate(3px, 3px); }
-  60% { transform: translate(-3px, -3px); }
-  80% { transform: translate(-3px, 3px); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(3px, -3px);
+  }
+  40% {
+    transform: translate(3px, 3px);
+  }
+  60% {
+    transform: translate(-3px, -3px);
+  }
+  80% {
+    transform: translate(-3px, 3px);
+  }
 }
 
 /* Анимация для второго псевдоэлемента */
 @keyframes glitchAfter {
-  0%, 100% { transform: translate(0); }
-  20% { transform: translate(-3px, 3px); }
-  40% { transform: translate(-3px, -3px); }
-  60% { transform: translate(3px, 3px); }
-  80% { transform: translate(3px, -3px); }
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
 }
 
-.header a {
-  color: $c_pure_white;
-  text-decoration: none;
-  padding: 20px 30px;
-  font-size: 24px;
-
-  transition: color 0.1s ease, transform 0.3s ease;
-}
-
-.header a:hover {
-  color: $c_soft_cyan;
-
-  transform: translate(0 ,10px);
-}
-
-.active {
-  border-bottom: 5px solid $c_warm_orange;
-}
-
-.header .links {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-grow: 1;
-}

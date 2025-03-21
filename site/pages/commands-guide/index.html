@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="windows-1251"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>niko-bot - Гайд по командам</title>
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link id="theme-link" rel="stylesheet" href="/css/theme-light.css">
     <link rel="stylesheet" type="text/css" href="/css/background.css">
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/style-guide.css">
@@ -19,50 +21,51 @@
   </head>
 
   <body>
+    <script src="/js/changeTheme.js" defer></script>
     <script src="/js/openModal.js" defer></script>
     <script src="/js/toggleMenu.js" defer></script>
 
     <!-- Модальное окно для сриншотов -->
     <div class="modal" id="screenshotModal">
-      <span class="close" id="closeModal">&times;</span>
-      <img class="modal-content" id="modalImage">
+      <span class="modal__close" id="closeModal" aria-label="Закрыть изображение">&times;</span>
+      <img class="modal__image" id="modalImage" alt="Увеличенный скриншот">
     </div>
 
     <!-- Шапка сайта -->
-    <div class="header">
+    <header class="site-header">
       <div class="logo-glitch">Niko Bot</div>
-      <div class="links">
-        <a href="/">Гайды</a>
-        <a href="https://t.me/niko_bot_news">Новости</a>
-        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
-      </div>
+      <nav class="site-header__nav">
+        <a href="/" class="site-header__nav-link">Гайды</a>
+        <a href="https://t.me/niko_bot_news" class="site-header__nav-link">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat" class="site-header__nav-link">Донат</a>
+      </nav>
 
       <!-- Мобильное меню -->
-      <div class="burger" onclick="openMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="burger-menu" onclick="openMenu()" aria-label="Открыть меню">
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
+        <div class="burger-menu__line"></div>
       </div>
-    </div>
+    </header>
 
     <!-- Фон для мобильного меню -->
     <div class="burger-overlay"></div>
-    <div class="burger-background">
-      <div class="close-btn" onclick="closeMenu()">&times;</div>
-      <p class="menu-tittle">Меню</p>
+    <div class="burger-menu__panel">
+      <div class="burger-menu__close" onclick="closeMenu()" aria-label="Закрыть меню">&times;</div>
+      <p class="burger-menu__title">Меню</p>
 
-      <div class="menu-link">
-        <a href="/index.html">Гайды</a>
-        <a href="https://t.me/niko_bot_news">Новости</a>
-        <a href="https://t.me/niko_rp_bot?start=donat">Донат</a>
-      </div>
+      <nav class="burger-menu__nav">
+        <a href="/index.html" class="burger-menu__link">Гайды</a>
+        <a href="https://t.me/niko_bot_news" class="burger-menu__link">Новости</a>
+        <a href="https://t.me/niko_rp_bot?start=donat" class="burger-menu__link">Донат</a>
+      </nav>
     </div>
 
     <!-- Описание содержимого -->
-    <div class="container">
+    <div class="content-container">
       <h1>Гайд по командам</h1>
 
-      <div class="content-info">
+      <nav class="toc">
         <p><span>·· </span><a href="#profile">Профиль игрока</a></p>
         <p><span>·· </span><a href="#marriage">Браки</a></p>
         <p><span>·· </span><a href="#friends">Друзья</a></p>
@@ -81,430 +84,469 @@
         <p><span>·· </span><a href="#karma">Карма</a></p>
         <p><span>·· </span><a href="#privacy">Приватность</a></p>
         <p><span>·· </span><a href="#otherCommands">Другие команды</a></p>
-      </div>
+      </nav>
 
-      <div class="section-space"></div>
+      <div class="section-spacer"></div>
     </div>
 
-    <div class="container">
-      <div class="warning-info">
-        <h2 class="headlines">Внимание!</h2>
+    <div class="content-container">
+      <div class="warning-box">
+        <h2 class="section-title">Внимание!</h2>
         <p>👉 <a href="https://t.me/niko_rp_bot">Официальная ссылка на Нико</a></p>
         <p>👉 <a href="https://t.me/niko_bot_news">Официальная ссылка на новостной канал</a></p>
         <p>👉 <a href="https://t.me/niko_room">Официальная ссылка на группу</a></p>
 
-        <img src="/images/pepe/pepe-clown-2.gif" loading="lazy">
+        <img src="/images/pepe/pepe-clown-2.gif" alt="Пепе клоун" loading="lazy">
 
         <p>Все остальные это подделки и дешевки с алиэкспрес!</p>
       </div>
 
-      <div class="section-space"></div>
+      <div class="section-spacer"></div>
 
-      <div class="warning-info">
+      <div class="warning-box">
         <p>🔔 Если Вы не хотите, что бы бот вас отмечал (тегал со звуком), отключите уведомления</p>
 
-        <details class="warning">
-          <summary>КАК ЭТО СДЕЛАТЬ?</summary>
-          <img src="images/disableSound.jpg" alt="screenshot" class="screenshot" loading="lazy">
+        <details class="collapsible--warning">
+          <summary class="collapsible__summary">КАК ЭТО СДЕЛАТЬ?</summary>
+          <img src="images/disableSound.jpg" alt="Инструкция по отключению звука" class="screenshot" loading="lazy">
         </details>
       </div>
 
-      <div class="section-space"></div>
+      <div class="section-spacer"></div>
     </div>
 
-    <div class="section-space"></div>
+    <div class="section-spacer"></div>
 
-    <div class="container">
-      <div class="title-section" id="profile">👤 Профиль игрока</div>
-      <div class="content-section">
-        <p>Ваш профиль доступен по команде <code>профиль</code><p>
-        <p>Чтобы сменить расу, используйте команду  <code>сменить расу</code></p>
-        <p>Чтобы сменить возраст, команда <code>сменить возраст [число]</code></p>
-        <p>Чтобы просмотреть чужой профиль, ответьте на сообщение командой <code>инфо</code></p>
+    <main class="content-container">
+      <section id="profile">
+        <div class="section-header">👤 Профиль игрока</div>
+        <div class="section-content">
+          <p>Ваш профиль доступен по команде <code class="command-code">профиль</code><p>
+          <p>Чтобы сменить расу, используйте команду  <code class="command-code">сменить расу</code></p>
+          <p>Чтобы сменить возраст, команда <code class="command-code">сменить возраст [число]</code></p>
+          <p>Чтобы просмотреть чужой профиль, ответьте на сообщение командой <code class="command-code">инфо</code></p>
 
-        <details>
-          <summary>Скрин профиля</summary>
-          <img src="images/profile.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="marriage">💒 Система браков</div>
-      <div class="content-section">
-        <p>Для заключения брака необходимо ответить на сообщение человека, которому желаете сделать предложение, с командой: <code>вбрак</code></p>
-        <p>Чтобы развестись, отправьте команду: <code>развестись</code></p>
-        <p>Каждому браку выдается 100 ед. энергии, энергия каждый день уменьшается на 5 ед.</p>
-        <br>
-        <p class="warning">⚠️ Нулевая энергия, это просто показатель того, как крепок ваш брак :></p>
-        <br>
-        <p>Чтобы поддерживать энергию брака, нужно использовали РП команды на вашем партнере, такие как: <code>Поцеловать</code>, <code>Прижать</code>, <code>Обнять</code> и т.д.</p>
-
-        <details>
-          <summary>Скрин - они поженились! </summary>
-          <img src="images/marriage.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="friends">🎭 Система друзей</div>
-      <div class="content-section">
-        <p>Чтобы добавить в друзья  необходимо ответить на сообщение командой <code>вдрузья</code></p>
-        <p>Чтобы удалить из друзей, напиши в лс <a href="https://t.me/Niko_rp_bot">@niko_rp_bot</a> команду <code>друзья</code></p>
-        <p>Чтобы просмотреть список друзей, команда <code>друзья</code></p>
-
-        <details>
-          <summary>Показать скриншот</summary>
-          <img src="images/friends.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="games">🎲 Мини игры</div>
-      <div class="content-section">
-        <p>Просмотреть все мини-игры, команда <code>игры</code> - c примерами команд, как в них играть!</p>
-         <details>
-          <summary>Список мини-игр</summary>
-          <p>⚽️ Футбол</p>
-          <p>🏀 Баскетбол</p>
-          <p>🎳 Боулинг</p>
-          <p>🎯 Дартс</p>
-          <p>🎲 Кубик</p>
-          <p>🧩 Пазл</p>
-          <p>🎣 Рыбалка</p>
-          <p>⛏️ Рудник</p>
-          <p>💣 Мины</p>
-        </details>
-        <br>
-        <p><b>Чтобы поиграть с кем-нибудь, ответьте на сообщение человека.</b></p>
-        <p>Например, командой <code>играть футбол 100</code></p>
-
-        <details>
-          <summary>Пример игры</summary>
-          <img src="images/games.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="fishing">🎣 Рыбалка и Рудник</div>
-      <div class="content-section">
-        <p><b>Рыбалка - это PVE мини-игра, в которой вы ловите и потом её продаете.</b></p>
-        <p>Чтобы начать рыбачить, достаточно купить удочку в магазине.</p>
-        <p>Дополнительно можно приобрести прикормку, это уменьшит таймер и можно
-          будет рыбачить быстрее. Вся пойманная рыба будет у вас в <b>инвентаре!</b></p>
-        <br>
-        <p><b>Продать улов</b> <code>продать рыбу [количество]</code></p>
-
-        <details>
-          <summary>Скрин - продажа рыбы</summary>
-          <img src="images/fishing.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-
-        <br>
-        <p>Аналогично для мини-игры в Рудник.</p>
-        <details>
-          <summary>Скрин - рудник</summary>
-          <img src="images/mine.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-
-        <details>
-          <summary>Скрин - продажа минерала</summary>
-          <img src="images/mine-sell.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="inventory">🎒 Инвентарь</div>
-      <div class="content-section">
-        <p>Открыть инвентарь, команда <code>инвентарь</code></p>
-
-        <br>
-        <p><i><b>Всё что нужно знать про инвентарь</b></i></p>
-        <div class="union">
-          <p>● [тип] - это тип сущности, по которому можно произвести продажу</p>
-          <p>● Слоты стакаются автоматически</p>
-          <p>● Предел инвентаря - <b>100</b> слотов</p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин профиля</summary>
+            <img src="images/profile.jpg" alt="Скриншот профиля" class="screenshot" loading="lazy">
+          </details>
         </div>
-        <br>
-        <p>Если написать <code>продать змея 1</code> - можно продать змею, ну или любой другой элемент вашего инвентаря</p>
+      </section>
 
-        <p><img src="/images/pepe/goose-pepe.gif" width="64" height="64" loading="lazy">* бежит продавать *</p>
+      <div class="section-spacer"></div>
 
-        <details>
-          <summary>Скрин инвентаря</summary>
-          <img src="images/inventory.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+      <section id="marriage">
+        <div class="section-header">💒 Система браков</div>
+        <div class="section-content">
+          <p>Для заключения брака необходимо ответить на сообщение человека, которому желаете сделать предложение, с командой: <code class="command-code">вбрак</code></p>
+          <p>Чтобы развестись, отправьте команду: <code class="command-code">развестись</code></p>
+          <p>Каждому браку выдается 100 ед. энергии, энергия каждый день уменьшается на 5 ед.</p>
+          <br>
+          <p class="warning-text">⚠️ Нулевая энергия, это просто показатель того, как крепок ваш брак :></p>
+          <br>
+          <p>Чтобы поддерживать энергию брака, нужно использовали РП команды на вашем партнере, такие как: <code class="command-code">Поцеловать</code>, <code class="command-code">Прижать</code>, <code class="command-code">Обнять</code> и т.д.</p>
 
-      <div class="section-space"></div>
-
-      <div class="title-section" id="trade">🤝 Обмен ресурсами</div>
-      <div class="content-section">
-        <p><b>Ресурсами из вашего инвентаря можно обменяться</b></p>
-        <br>
-        <p><b>Сущности</b> - это ресурсы, которые есть в вашем инвентаре. Не получится разве что, обменять сущности, у которых есть прочность.</p>
-        <br>
-        <p><i><b>Примеры</b></i></p>
-        <div class="union">
-          <p>● <b>Обмен на другую сущность</b></p>
-          <p><code>обмен синяя рыба 10 на изумруд 5</code></p>
-          <p>● <b>Обмен на валюту</b></p>
-          <p><code>обмен изумруд 10 на деньги 10к</code></p>
-          <p>● <b>Подарить сущностей</b></p>
-          <p><code>обмен изумруд 10 на деньги 0</code></p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - они поженились! </summary>
+            <img src="images/marriage.jpg" alt="Скриншот заключения брака" class="screenshot" loading="lazy">
+          </details>
         </div>
+      </section>
 
-        <details>
-          <summary>Скрин - как сделать обмен</summary>
-          <img src="images/trade.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+      <div class="section-spacer"></div>
 
-      <div class="section-space"></div>
+      <section id="friends">
+        <div class="section-header">🎭 Система друзей</div>
+        <div class="section-content">
+          <p>Чтобы добавить в друзья  необходимо ответить на сообщение командой <code class="command-code">вдрузья</code></p>
+          <p>Чтобы удалить из друзей, напиши в лс <a href="https://t.me/Niko_rp_bot">@niko_rp_bot</a> команду <code class="command-code">друзья</code></p>
+          <p>Чтобы просмотреть список друзей, команда <code class="command-code">друзья</code></p>
 
-      <div class="title-section" id="like">❤️‍🔥 Лайки</div>
-      <div class="content-section">
-        <p>Лайки уникальны, лайк можно получить только от одного пользователя</p>
-        <p>Чтобы поставить лайк, ответьте на сообщение командой <code>лайк</code></p>
-        <img src="/images/pepe/pepe-love.gif" loading="lazy">
+          <details class="collapsible">
+            <summary class="collapsible__summary">Показать скриншот</summary>
+            <img src="images/friends.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
 
-        <details>
-          <summary>Скрин - как ставить лайк</summary>
-          <img src="images/like.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+      <div class="section-spacer"></div>
 
-      <div class="section-space"></div>
+      <section id="games">
+        <div class="section-header">🎲 Мини игры</div>
+        <div class="section-content">
+          <p>Просмотреть все мини-игры, команда <code class="command-code">игры</code> - c примерами команд, как в них играть!</p>
+           <details class="collapsible">
+            <summary class="collapsible__summary">Список мини-игр</summary>
+            <p>⚽️ Футбол</p>
+            <p>🏀 Баскетбол</p>
+            <p>🎳 Боулинг</p>
+            <p>🎯 Дартс</p>
+            <p>🎲 Кубик</p>
+            <p>🧩 Пазл</p>
+            <p>🎣 Рыбалка</p>
+            <p>⛏️ Рудник</p>
+            <p>💣 Мины</p>
+          </details>
+          <br>
+          <p><b>Чтобы поиграть с кем-нибудь, ответьте на сообщение человека.</b></p>
+          <p>Например, командой <code class="command-code">играть футбол 100</code></p>
 
-      <div class="title-section" id="limits">🗒 Лимиты</div>
-      <div class="content-section">
-        <p>Лимиты - это ваши ограничения, например, лимит на спины равен <b>100</b> попыткам в день.</p> 
-        <p>Чтобы просмотреть свои лимиты, команда <code>лимиты</code></p>
-        <p clas="p-img"><a href="vip">У vip-пользователей, лимитов почти нет! </a><img src="/images/pepe/pepe-like.gif" width="32" height="32"></p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Пример игры</summary>
+            <img src="images/games.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
 
-        <details>
-          <summary>Скрин лимитов</summary>
-          <img src="images/limits.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+      <div class="section-spacer"></div>
 
-      <div class="section-space"></div>
+      <section id="fishing">
+        <div class="section-header">🎣 Рыбалка и Рудник</div>
+        <div class="section-content">
+          <p><b>Рыбалка - это PVE мини-игра, в которой вы ловите и потом её продаете.</b></p>
+          <p>Чтобы начать рыбачить, достаточно купить удочку в магазине.</p>
+          <p>Дополнительно можно приобрести прикормку, это уменьшит таймер и можно
+            будет рыбачить быстрее. Вся пойманная рыба будет у вас в <b>инвентаре!</b></p>
+          <br>
+          <p><b>Продать улов</b> <code class="command-code">продать рыбу [количество]</code></p>
 
-      <div class="title-section" id="stats">📈 Статистика</div>
-      <div class="content-section">
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - продажа рыбы</summary>
+            <img src="images/fishing.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+
+          <br>
+          <p>Аналогично для мини-игры в Рудник.</p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - рудник</summary>
+            <img src="images/mine.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - продажа минерала</summary>
+            <img src="images/mine-sell.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="inventory">
+        <div class="section-header">🎒 Инвентарь</div>
+        <div class="section-content">
+          <p>Открыть инвентарь, команда <code class="command-code">инвентарь</code></p>
+
+          <br>
+          <p><i><b>Всё что нужно знать про инвентарь</b></i></p>
+          <div class="union">
+            <p>● [тип] - это тип сущности, по которому можно произвести продажу</p>
+            <p>● Слоты стакаются автоматически</p>
+            <p>● Предел инвентаря - <b>100</b> слотов</p>
+          </div>
+          <br>
+          <p>Если написать <code class="command-code">продать змея 1</code> - можно продать змею, ну или любой другой элемент вашего инвентаря</p>
+
+          <p><img src="/images/pepe/goose-pepe.gif" width="64" height="64" loading="lazy">* бежит продавать *</p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин инвентаря</summary>
+            <img src="images/inventory.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="trade">
+        <div class="section-header">🤝 Обмен ресурсами</div>
+        <div class="section-content">
+          <p><b>Ресурсами из вашего инвентаря можно обменяться</b></p>
+          <br>
+          <p><b>Сущности</b> - это ресурсы, которые есть в вашем инвентаре. Не получится разве что, обменять сущности, у которых есть прочность.</p>
+          <br>
+          <p><i><b>Примеры</b></i></p>
+          <div class="union">
+            <p>● <b>Обмен на другую сущность</b></p>
+            <p><code class="command-code">обмен синяя рыба 10 на изумруд 5</code></p>
+            <p>● <b>Обмен на валюту</b></p>
+            <p><code class="command-code">обмен изумруд 10 на деньги 10к</code></p>
+            <p>● <b>Подарить сущностей</b></p>
+            <p><code class="command-code">обмен изумруд 10 на деньги 0</code></p>
+          </div>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - как сделать обмен</summary>
+            <img src="images/trade.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="like">
+        <div class="section-header">❤️‍🔥 Лайки</div>
+        <div class="section-content">
+          <p>Лайки уникальны, лайк можно получить только от одного пользователя</p>
+          <p>Чтобы поставить лайк, ответьте на сообщение командой <code class="command-code">лайк</code></p>
+          <img src="/images/pepe/pepe-love.gif" loading="lazy">
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - как ставить лайк</summary>
+            <img src="images/like.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="limits">
+        <div class="section-header">🗒 Лимиты</div>
+        <div class="section-content">
+          <p>Лимиты - это ваши ограничения, например, лимит на спины равен <b>100</b> попыткам в день.</p> 
+          <p>Чтобы просмотреть свои лимиты, команда <code class="command-code">лимиты</code></p>
+          <p clas="p-img"><a href="vip">У vip-пользователей, лимитов почти нет! </a><img src="/images/pepe/pepe-like.gif" width="32" height="32"></p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин лимитов</summary>
+            <img src="images/limits.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="stats">
+        <div class="section-header">📈 Статистика</div>
+        <div class="section-content">
+          <p class="p-img">
+            <img src="/images/pepe/pepe-dance.gif" width="32" height="32" loading="lazy">
+            <a href ="#vip" class="link"><b>V I P</b></a>
+            <img src="/images/pepe/pepe-dance.gif" width="32" height="32" loading="lazy">
+          <br>
+          </p>
+          <p>Обладатели випа имеют расширенную информацию по своим различным статистикам</p>
+          <br>
+          <p><i><b>Пример команд</b></i></p>
+          <div class="union">
+            <p>● <code class="command-code">Стата игры</code></p>
+            <p>● <code class="command-code">Стата переводы</code></p>
+            <p>● <code class="command-code">Стата продажи</code></p>
+          </div>
+          <p>Базовая статистика, доступна всем пользователям по команде: <code class="command-code">стата</code></p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин статы</summary>
+            <img src="images/stats.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="casino">
+        <div class="section-header">
+          <img src="/images/casino.gif" width="48" height="48" loading="lazy"> Спины и Казино
+        </div>
+        <div class="section-content">
+          <p><b>У каждого чата есть своя касса, каждый проигрыш в спин эту кассу пополняет</b></p>
+          <p>Тот, кто первый получит <b>Джекпот</b> или <b>Ультра джекпот</b> - забирает кассу!</p>
+          <br>
+          <p>Просмотр кассы казино, команда <code class="command-code">спин</code></p>
+          <p>Чтобы сделать  спин, команда <code class="command-code">спин 100</code></p>
+          <p>Просмотреть комбинации, команда <code class="command-code">команда спин</code></p>
+          <p>Ваш лимит на количество попыток, команда <code class="command-code">лимиты</code></p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин казино</summary>
+            <img src="images/casino.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="bonus">
+        <div class="section-header">🎁 Бонус</div>
+        <div class="section-content">
+        <p>Бонус выдается один раз в 24 часа, чтобы получить свой бонус, команда <code class="command-code">бонус</code></p>
         <p class="p-img">
-          <img src="/images/pepe/pepe-dance.gif" width="32" height="32" loading="lazy">
-          <a href ="#vip" class="link"><b>V I P</b></a>
-          <img src="/images/pepe/pepe-dance.gif" width="32" height="32" loading="lazy">
-        <br>
+          <img src="/images/banana-dance.gif" width="48" height="48" loading="lazy"> 
+          <a href = "#vip" class="link">VIP пользователи получают немного больше бонуса.</a>
+          <img src="/images/banana-dance.gif" width="48" height="48" loading="lazy">
         </p>
-        <p>Обладатели випа имеют расширенную информацию по своим различным статистикам</p>
-        <br>
-        <p><i><b>Пример команд</b></i></p>
-        <div class="union">
-          <p>● <code>Стата игры</code></p>
-          <p>● <code>Стата переводы</code></p>
-          <p>● <code>Стата продажи</code></p>
+
+        <details class="collapsible">
+          <summary class="collapsible__summary">Скрин бонуса</summary>
+          <img src="images/bonus.jpg" alt="screenshot" class="screenshot" loading="lazy">
+        </details>
         </div>
-        <p>Базовая статистика, доступна всем пользователям по команде: <code>стата</code></p>
+      </section>
 
-        <details>
-          <summary>Скрин статы</summary>
-          <img src="images/stats.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+      <div class="section-spacer"></div>
 
-      <div class="section-space"></div>
+      <section id="tops">
+        <div class="section-header" id="tops">🐙 Топы</div>
+        <div class="section-content">
+          <p><i><b>Список топовых топов</b></i></p>
+          <div class="union">
+            <p>● <code class="command-code">Топ браков</code></p>
+            <p>● <code class="command-code">Топ активных</code></p>
+            <p>● <code class="command-code">Топ богатых</code></p>
+            <p>● <code class="command-code">Топ карма</code></p>
+            <p>● <code class="command-code">Топ донатов</code></p>
+            <p>● <code class="command-code">Топ чатов</code></p>
+          </div>
 
-      <div class="title-section" id="casino">
-        <img src="/images/casino.gif" width="48" height="48" loading="lazy"> Спины и Казино
-      </div>
-      <div class="content-section">
-        <p><b>У каждого чата есть своя касса, каждый проигрыш в спин эту кассу пополняет</b></p>
-        <p>Тот, кто первый получит <b>Джекпот</b> или <b>Ультра джекпот</b> - забирает кассу!</p>
-        <br>
-        <p>Просмотр кассы казино, команда <code>спин</code></p>
-        <p>Чтобы сделать  спин, команда <code>спин 100</code></p>
-        <p>Просмотреть комбинации, команда <code>команда спин</code></p>
-        <p>Ваш лимит на количество попыток, команда <code>лимиты</code></p>
+          <br>
+          <p class="warning">🔔 Некоторые топ-ы работают только в чатах, такие как - <code class="command-code">топ браков</code> 
+          и <code class="command-code">топ активных</code>. Остальные топы являются глобальными </p>
 
-        <details>
-          <summary>Скрин казино</summary>
-          <img src="images/casino.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - топ богатых</summary>
+            <img src="images/tops.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
 
-      <div class="section-space"></div>
+          <p>Существует так же <code class="command-code">топ чатов</code>  этот топ, можно просмотреть только в ЛС в Нико</p>
 
-      <div class="title-section" id="bonus">🎁 Бонус</div>
-      <div class="content-section">
-      <p>Бонус выдается один раз в 24 часа, чтобы получить свой бонус, команда <code>бонус</code></p>
-      <p class="p-img">
-        <img src="/images/banana-dance.gif" width="48" height="48" loading="lazy"> 
-        <a href = "#vip" class="link">VIP пользователи получают немного больше бонуса.</a>
-        <img src="/images/banana-dance.gif" width="48" height="48" loading="lazy">
-      </p>
+          <br>
+          <p><i><b>Чтобы попасть в топ чатов, нужно выполнить три условия</b></i></p>
+          <p class="union">1. Ваш чат должен быть от 10 человек</p>
+          <p class="union">2. <b>Нико</b> в чате должна быть администратором</p>
+          <p class="union">3. Чтобы в ваш чат могли попасть, у него должна быть публичная ссылка, такая как @niko_room</p>
 
-      <details>
-        <summary>Скрин бонуса</summary>
-        <img src="images/bonus.jpg" alt="screenshot" class="screenshot" loading="lazy">
-      </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="tops">🐙 Топы</div>
-      <div class="content-section">
-        <p><i><b>Список топовых топов</b></i></p>
-        <div class="union">
-          <p>● <code>Топ браков</code></p>
-          <p>● <code>Топ активных</code></p>
-          <p>● <code>Топ богатых</code></p>
-          <p>● <code>Топ карма</code></p>
-          <p>● <code>Топ донатов</code></p>
-          <p>● <code>Топ чатов</code></p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - топ чатов</summary>
+            <img src="images/topchat.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
         </div>
+      </section>
 
-        <br>
-        <p class="warning">🔔 Некоторые топ-ы работают только в чатах, такие как - <code>топ браков</code> 
-        и <code>топ активных</code>. Остальные топы являются глобальными </p>
+      <div class="section-spacer"></div>
 
-        <details>
-          <summary>Скрин - топ богатых</summary>
-          <img src="images/tops.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-
-        <p>Существует так же <code>топ чатов</code>  этот топ, можно просмотреть только в ЛС в Нико</p>
-
-        <br>
-        <p><i><b>Чтобы попасть в топ чатов, нужно выполнить три условия</b></i></p>
-        <p class="union">1. Ваш чат должен быть от 10 человек</p>
-        <p class="union">2. <b>Нико</b> в чате должна быть администратором</p>
-        <p class="union">3. Чтобы в ваш чат могли попасть, у него должна быть публичная ссылка, такая как @niko_room</p>
-
-        <details>
-          <summary>Скрин - топ чатов</summary>
-          <img src="images/topchat.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="vip">
-        <img src="/images/crown.gif" width="48" height="48" loading="lazy"> VIP Статус
-      </div>
-      <div class="content-section">
-        <p> ВИП статус даёт возможность админам чатов настраивать модерацию в своих чатах,
-        а игрокам <b>повышает лимиты и дает некоторые расширенные возможности!</b></p>
-        <br>
-
-        <p>✅ Повышенный ежедневный бонус <b>5.000 - 30.000р</b></p>
-        <p>✅ Повышенный пазл <b>1.000 - 10.000р</b></p>
-        <p>✅ Увеличенные лимиты в спинах <b>500 спинов/день</b></p>
-        <p>✅ Большой суточный лимит на переводы <b>10.000.000р/день</b></p>
-        <p>✅ Расширенные модераторские команды</p>
-        <p>✅ Расширенная информация по своей статистике</p>
-        <p>✅ Отображение короны в профиле</p>
-        <p>✅ Первыми пробуют обновления</p>
-
-        <p class="p-img">
-          <img src="/images/pepe/pepe-money.gif" width="128" height="128" loading="lazy">
-          * Кстати vip стоит не дорого ;) *
-        </p>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="rp">📜 РП команды</div>
-      <div class="content-section">
-        <p>Список всех РП команд можно посмотреть введя <code>команда обнять</code></p>
-
-        <details>
-          <summary>Скрин - все РП команды</summary>
-          <img src="images/rp.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-        <br>
-        <p>Пример команды <code>кусь</code></p>
-        <details>
-          <summary>Ну кусь и кусь</summary>
-          <img src="images/kus.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="karma">🔮 Карма</div>
-      <div class="content-section">
-        <p>Карма это элемент РП, который показывает, насколько вас ценят другие пользователи!
-        Если у Вас высокая карма, значит пользователи вам её повышали. И наоборот, если у вас отрицательная карма, значит что вами были недовольны :)</p>
-
-        <img src="/images/magic-ball.gif" class="container-image" loading="lazy">
-
-        <p>В ряде случаев высокая карма это хорошо, но не расстраивайтесь,
-        если кто-то вам назло понизил карму, это всего лишь цифорки в вашем профиле 😊</p>
-
-        <p>Цена за добавление или снятие кармы - <b>25.000р</b></p>
-        <p>Чтобы добавить карму, команда  <code>+карма</code></p>
-        <p>Чтобы снять карму, команда  <code>-карма</code></p>
-
-        <details>
-          <summary>Скрин - плюс к карме</summary>
-          <img src="images/karma.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="privacy">🦸🏻 Приватность</div>
-      <div class="content-section">
-        <p>Включив режим приватности, ссылка на ваш профиль не будет отображаться в различных топах.</p>
-        <p>Например её не будет в <code>топ богатых</code></p>
-        <p>Да и вообще нигде не будет :)</p>
-
-        <details>
-          <summary>Скрин - режим приватности</summary>
-          <img src="images/privacy.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
-
-      <div class="section-space"></div>
-
-      <div class="title-section" id="otherCommands">🧾 Другие команды</div>
-      <div class="content-section">
-        <p>Чтобы просмотреть все команды напишите <code>команды</code></p>
-        <p>Чтобы просмотреть как пользоваться команды, напишите <code>команда [название команды]</code></p>
-        <br>
-        <p><i><b>Например</b></i></p>
-        <div class="union">
-          <p>● <code>команда спин</code></p>
-          <p>● <code>команда вбрак</code></p>
-          <p>● <code>команда обнять</code></p>
+      <section id="vip">
+        <div class="section-header" id="vip">
+          <img src="/images/crown.gif" width="48" height="48" loading="lazy"> VIP Статус
         </div>
+        <div class="section-content">
+          <p> ВИП статус даёт возможность админам чатов настраивать модерацию в своих чатах,
+          а игрокам <b>повышает лимиты и дает некоторые расширенные возможности!</b></p>
+          <br>
 
-        <details>
-          <summary>Показать скриншот</summary>
-          <img src="images/others.jpg" alt="screenshot" class="screenshot" loading="lazy">
-        </details>
-      </div>
+          <p>✅ Повышенный ежедневный бонус <b>5.000 - 30.000р</b></p>
+          <p>✅ Повышенный пазл <b>1.000 - 10.000р</b></p>
+          <p>✅ Увеличенные лимиты в спинах <b>500 спинов/день</b></p>
+          <p>✅ Большой суточный лимит на переводы <b>10.000.000р/день</b></p>
+          <p>✅ Расширенные модераторские команды</p>
+          <p>✅ Расширенная информация по своей статистике</p>
+          <p>✅ Отображение короны в профиле</p>
+          <p>✅ Первыми пробуют обновления</p>
 
-      <div class="section-space"></div>
-    </div>
-
-    <div class="footer-space"></div>
-
-    <div class="footer-container">
-      <div class="footer">
-        <div class="block-info">
-          <p>Вы дошли до дна</p>
-          <p>(c) uriid1</p>
+          <p class="p-img">
+            <img src="/images/pepe/pepe-money.gif" width="128" height="128" loading="lazy">
+            * Кстати vip стоит не дорого ;) *
+          </p>
         </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="rp">
+        <div class="section-header" id="rp">📜 РП команды</div>
+        <div class="section-content">
+          <p>Список всех РП команд можно посмотреть введя <code class="command-code">команда обнять</code></p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - все РП команды</summary>
+            <img src="images/rp.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+          <br>
+          <p>Пример команды <code class="command-code">кусь</code></p>
+          <details class="collapsible">
+            <summary class="collapsible__summary">Ну кусь и кусь</summary>
+            <img src="images/kus.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="karma">
+        <div class="section-header">🔮 Карма</div>
+        <div class="section-content">
+          <p>Карма это элемент РП, который показывает, насколько вас ценят другие пользователи!
+          Если у Вас высокая карма, значит пользователи вам её повышали. И наоборот, если у вас отрицательная карма, значит что вами были недовольны :)</p>
+
+          <img src="/images/magic-ball.gif" class="container-image" loading="lazy">
+
+          <p>В ряде случаев высокая карма это хорошо, но не расстраивайтесь,
+          если кто-то вам назло понизил карму, это всего лишь цифорки в вашем профиле 😊</p>
+
+          <p>Цена за добавление или снятие кармы - <b>25.000р</b></p>
+          <p>Чтобы добавить карму, команда  <code class="command-code">+карма</code></p>
+          <p>Чтобы снять карму, команда  <code class="command-code">-карма</code></p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - плюс к карме</summary>
+            <img src="images/karma.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="privacy">
+        <div class="section-header" id="privacy">🦸🏻 Приватность</div>
+        <div class="section-content">
+          <p>Включив режим приватности, ссылка на ваш профиль не будет отображаться в различных топах.</p>
+          <p>Например её не будет в <code class="command-code">топ богатых</code></p>
+          <p>Да и вообще нигде не будет :)</p>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Скрин - режим приватности</summary>
+            <img src="images/privacy.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+
+      <section id="otherCommands">
+        <div class="section-header" id="otherCommands">🧾 Другие команды</div>
+        <div class="section-content">
+          <p>Чтобы просмотреть все команды напишите <code class="command-code">команды</code></p>
+          <p>Чтобы просмотреть как пользоваться команды, напишите <code class="command-code">команда [название команды]</code></p>
+          <br>
+          <p><i><b>Например</b></i></p>
+          <div class="union">
+            <p>● <code class="command-code">команда спин</code></p>
+            <p>● <code class="command-code">команда вбрак</code></p>
+            <p>● <code class="command-code">команда обнять</code></p>
+          </div>
+
+          <details class="collapsible">
+            <summary class="collapsible__summary">Показать скриншот</summary>
+            <img src="images/others.jpg" alt="screenshot" class="screenshot" loading="lazy">
+          </details>
+        </div>
+      </section>
+
+      <div class="section-spacer"></div>
+    </main> <!--End-->
+
+    <div class="footer-spacer"></div>
+
+    <footer class="site-footer">
+      <div class="site-footer__content">
+        <p>(c) uriid1</p>
+        <p>Вы дошли до дна</p>
       </div>
-    </div>
+
+      <div class="site-footer__content">
+        <button class="theme-toggle" id="theme-toggle">Night Theme</button>
+      </div>
+    </footer>
 
     <div class="bg-pattern"></div>
   </body>
 </html>
+

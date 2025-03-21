@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест формы</title>
+    <link rel="stylesheet" type="text/css" href="/css/global.css">
+    <link id="theme-link" rel="stylesheet" href="/css/theme-light.css">
     <link rel="stylesheet" type="text/css" href="/css/background.css">
     <link rel="stylesheet" type="text/css" href="index.css">
     $raw{/js/clickfraud.tmpl}
@@ -14,16 +16,16 @@
     <form id="testForm" action="/v1/test-form" method="post" class="test-form">
       <div class="form-group">
         <label for="username" class="ctext">Имя</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" required aria-required="true">
       </div>
 
       <div class="form-group">
         <label for="message" class="ctext">Сообщение</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
       </div>
 
       <button type="submit">Отправить</button>
-      <span id="successMessage" class="sendText">Отправлено!</span>
+      <span id="successMessage" class="sendText" aria-live="polite">Отправлено!</span>
     </form>
 
     <div class="bg-pattern"></div>
@@ -31,3 +33,4 @@
     <script src="index.js"></script>
   </body>
 </html>
+

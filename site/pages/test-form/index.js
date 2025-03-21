@@ -1,45 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('testForm');
-  const successMessage = document.getElementById('successMessage');
-  const usernameInput = document.getElementById('username');
-  const messageInput = document.getElementById('message');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("testForm")
+  const successMessage = document.getElementById("successMessage")
+  const usernameInput = document.getElementById("username")
+  const messageInput = document.getElementById("message")
 
-  // Отправка формы через AJAX
-  form.addEventListener('submit', async (event) => {
+  /**
+   * Скрывает сообщение об успешной отправке
+   */
+  function hideSuccessMessage() {
+    successMessage.style.display = "none"
+  }
+
+  /**
+   * Обработчик отправки формы
+   * @param {Event} event - Событие отправки формы
+   */
+  async function handleSubmit(event) {
     // Отменяем стандартную отправку формы
-    event.preventDefault();
+    event.preventDefault()
 
     // Собираем данные в объект
     const formData = {
       username: usernameInput.value,
-      message: messageInput.value
-    };
+      message: messageInput.value,
+    }
 
     try {
       const response = await fetch(form.action, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
-      });
+        body: JSON.stringify(formData),
+      })
 
       if (response.ok) {
-        successMessage.style.display = 'inline';
+        successMessage.style.display = "inline"
       } else {
-        console.error(response);
+        console.error("Ошибка при отправке формы:", response.statusText)
       }
-    } 
-    catch (err) {
-      console.error('Error:', err);
+    } catch (err) {
+      console.error("Ошибка:", err)
     }
-  });
-
-  // Если пользователь меняет данные в инпутах, скрыть сообщение 
-  function hideSuccessMessage() {
-    successMessage.style.display = 'none';
   }
 
-  usernameInput.addEventListener('input', hideSuccessMessage);
-  messageInput.addEventListener('input', hideSuccessMessage);
-});
+  // Добавляем обработчики событий
+  form.addEventListener("submit", handleSubmit)
+  usernameInput.addEventListener("input", hideSuccessMessage)
+  messageInput.addEventListener("input", hideSuccessMessage)
+})
+
