@@ -1,0 +1,55 @@
+:root {
+  /* Основные цвета */
+  --color-text-primary: #fff8f0;
+  --color-text-secondary: #f0e8d8;
+  --color-text-tertiary: #d0c0a8;
+  
+  /* Фоновые цвета */
+  --color-bg-primary: #483832;
+  --color-bg-secondary: #352820;
+  --color-bg-container: rgba(65, 50, 40, 0.25);
+  --color-bg-container-alt: rgba(75, 60, 45, 0.35);
+  --color-bg-warning: rgba(190, 120, 70, 0.15);
+  --color-bg-modal: rgba(30, 20, 15, 0.75);
+  --color-bg-info: rgba(120, 80, 60, 0.35);
+  --color-bg-content: rgba(60, 45, 35, 0.35);
+  --color-bg-menu: #403025;
+  --bg-darker: #28201a;
+  
+  /* Кнопка на сайте */
+  --color-btn-primary: #e8a878;
+  --color-btn-primary-hover: #f0c090;
+  --color-btn-primary-shadow: rgba(230, 170, 120, 0.3);
+  
+  /* Цвет фона для главного описания на сайте */
+  --color-bg-guides-title: rgba(160, 100, 60, 0.15);
+  
+  /* Цвета границ */
+  --color-border-primary: rgba(160, 120, 90, 0.45);
+  --color-border-secondary: rgba(160, 120, 90, 0.3);
+  --color-border-container: rgba(160, 120, 90, 0.7);
+  --color-border-info: rgba(180, 140, 100, 0.4);
+  --color-border-alt: rgba(140, 100, 70, 0.25);
+  
+  /* Цвета заголовков */
+  --color-heading-bg: rgba(70, 50, 40, 0.7);
+  
+  /* Цвета ссылок и интерактивных элементов */
+  --color-link-primary: #f0a060;
+  --color-link-secondary: #d88040;
+  --color-link-hover: #ffc080;
+  --color-link-warning: #d85040;
+  --color-button-primary: #b07040;
+  --color-button-hover: #c88050;
+  --color-code-bg: rgba(160, 120, 80, 0.1);
+  
+  /* Цвета для эффектов */
+  --color-glitch-primary: #d88040;
+  --color-glitch-secondary: #a05030;
+  --color-accent: #d0c060;
+  
+  /* Цвета для уведомлений */
+  --color-success: #80b070;
+  --color-warning: #d06050;
+  --transition: all 0.3s ease;
+}

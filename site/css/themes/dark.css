@@ -14,7 +14,13 @@
   --color-bg-info: rgba(50, 90, 120, 0.45);
   --color-bg-content: rgba(32, 48, 68, 0.45);
   --color-bg-menu: #223344;
+  --color-bg-guides-title: rgba(87, 180, 186, 0.1);
   --bg-darker: #101721;
+
+  /* Кнопка на сайте */
+  --color-btn-primary: #e3a6ff;
+  --color-btn-primary-hover: #ff9ee6;
+  --color-btn-primary-shadow: rgba(255, 126, 219, 0.3);
 
   /* Цвета границ */
   --color-border-primary: rgba(80, 120, 160, 0.45);

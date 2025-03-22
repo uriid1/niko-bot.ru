@@ -4,9 +4,11 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/changeThemeDropdown.js"></script>
+
     <title>niko-bot - Главная</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link id="theme-link" rel="stylesheet" href="css/theme-light.css">
+    <link id="theme-link" rel="stylesheet" href="css/themes/light.css">
     <link rel="stylesheet" type="text/css" href="css/background.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -15,12 +17,10 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/guide-mobile.css">
     <link rel="stylesheet" type="text/css" href="css/mobile-menu.css">
-    $raw{/js/clickfraud.tmpl}
-    $raw{/js/yandex-metrika.tmpl}
+
   </head>
 
   <body>
-    <script src="/js/changeTheme.js" defer></script>
     <script src="/js/toggleMenu.js" defer></script>
     <script src="/js/randomQuotes.js" defer></script>
 
@@ -63,30 +63,36 @@
       </div>
     </section>
 
+    <div class="line-full"></div>
+
+    <div class="background-guides">
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+
+      <h2 class="title">Гайды / Туторы</h2>
+      <div class="line"></div>
+
+      <main class="card-container">
+        <a href="pages/commands-guide/" class="card-link">
+          <div class="card">
+            <h3>Гайд по основным игровым командам</h3>
+            <img src="/images/gaming.gif" alt="Анимация игровых команд" class="card-image" loading="lazy">
+          </div>
+        </a>
+
+        <a href="pages/mod-commands-guide/" class="card-link">
+          <div class="card">
+            <h3>Гайд по модераторским командам</h3>
+            <img src="/images/moderator.gif" alt="Анимация модераторских команд" class="card-image" loading="lazy">
+          </div>
+        </a>
+      </main>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="line-full"></div>
     <div class="spacer"></div>
     <div class="spacer"></div>
-
-    <h2 class="title">Гайды / Туторы</h2>
-    <div class="line"></div>
-
-    <main class="card-container">
-      <a href="pages/commands-guide/" class="card-link">
-        <div class="card">
-          <h3>Гайд по основным игровым командам</h3>
-          <img src="/images/gaming.gif" alt="Анимация игровых команд" class="card-image" loading="lazy">
-        </div>
-      </a>
-
-      <a href="pages/mod-commands-guide/" class="card-link">
-        <div class="card">
-          <h3>Гайд по модераторским командам</h3>
-          <img src="/images/moderator.gif" alt="Анимация модераторских команд" class="card-image" loading="lazy">
-        </div>
-      </a>
-    </main>
-
-    <div class="spacer"></div>
-
     <h2 class="title">Возможности бота</h2>
     <div class="line"></div>
 
@@ -142,7 +148,8 @@
       </div>
 
       <div class="site-footer__content">
-        <button id="theme-toggle">Night Theme</button>
+        <label for="dropdown">Choose Theme</label>
+        <select id="dropdown"></select>
       </div>
     </footer>
 

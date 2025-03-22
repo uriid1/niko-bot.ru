@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Проверяем сохранённую тему в localStorage
   if (localStorage.getItem('theme') === 'dark') {
-    themeLink.href = '/css/theme-dark.css';
+    themeLink.href = '/css/themes/dark.css';
     button.textContent = 'Light Theme';
   }
 
@@ -13,15 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add("theme-transition");
 
     // Проверяем текущую тему и меняем на противоположную
-    if (themeLink.href.includes('theme-dark.css')) {
-      themeLink.href = '/css/theme-light.css';
+    if (themeLink.href.includes('dark.css')) {
+      themeLink.href = '/css/themes/light.css';
       localStorage.setItem('theme', 'light');
 
       button.textContent = 'Dark Theme';
     } else {
-      themeLink.href = '/css/theme-dark.css';
+      themeLink.href = '/css/themes/dark.css';
       localStorage.setItem('theme', 'dark');
 
+      console.log('ok')
       button.textContent = 'Light Theme';
     }
 

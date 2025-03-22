@@ -4,9 +4,11 @@
     <meta charset="windows-1251"/>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/changeThemeDropdown.js"></script>
+
     <title>niko-bot - Гайд по модераторским командам</title>
     <link rel="stylesheet" type="text/css" href="/css/global.css">
-    <link id="theme-link" rel="stylesheet" href="/css/theme-light.css">
+    <link id="theme-link" rel="stylesheet" href="/css/themes/light.css">
     <link rel="stylesheet" type="text/css" href="/css/background.css">
     <link rel="stylesheet" type="text/css" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/style-guide.css">
@@ -21,7 +23,6 @@
   </head>
 
   <body>
-    <script src="/js/changeTheme.js" defer></script>
     <script src="/js/openModal.js" defer></script>
     <script src="/js/toggleMenu.js" defer></script>
     <script src="/js/randomQuotes.js" defer></script>
@@ -391,7 +392,8 @@
       </div>
 
       <div class="site-footer__content">
-        <button class="theme-toggle" id="theme-toggle">Night Theme</button>
+        <label for="dropdown">Choose Theme</label>
+        <select id="dropdown"></select>
       </div>
     </footer>
 

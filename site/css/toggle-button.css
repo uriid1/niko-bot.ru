@@ -1,0 +1,22 @@
+#toggle-button {
+  border: 2px solid #6a5acd;
+  background: rgb(0, 0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 2px #6a5acd;
+}
+
+#toggle-button:hover {
+  border: 2px solid #5a4fcf;
+  transform: scale(1.05);
+}
+
+#toggle-button:active {
+  transform: scale(0.95);
+}
