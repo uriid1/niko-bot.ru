@@ -4,22 +4,15 @@
     <meta charset="windows-1251"/>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/changeThemeDropdown.js"></script>
-
     <title>niko-bot - Гайд по модераторским командам</title>
-    <link rel="stylesheet" type="text/css" href="/css/global.css">
-    <link id="theme-link" rel="stylesheet" href="/css/themes/light.css">
-    <link rel="stylesheet" type="text/css" href="/css/background.css">
-    <link rel="stylesheet" type="text/css" href="/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/css/style-guide.css">
-    <link rel="stylesheet" type="text/css" href="/css/container-images.css">
-    <link rel="stylesheet" type="text/css" href="/css/format.css">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/css/guide-mobile.css">
-    <link rel="stylesheet" type="text/css" href="/css/mobile-menu.css">
-    <link rel="stylesheet" type="text/css" href="/css/modal-image.css">
-    $raw{/js/clickfraud.tmpl}
-    $raw{/js/yandex-metrika.tmpl}
+    <!-- Css -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Js -->
+    <script src="/js/changeTheme.js"></script>
+    {{ if (opts.devmode) then }}
+      raw{/js/clickfraud.tmpl}
+      raw{/js/yandex-metrika.tmpl}
+    {{ end }}
   </head>
 
   <body>

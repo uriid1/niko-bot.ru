@@ -1,3 +1,12 @@
+@import url("/css/global.css");
+@import url("/css/background.css");
+@import url("/css/header.css");
+@import url("/css/container-images.css");
+@import url("/css/format.css");
+@import url("/css/footer.css");
+@import url("/css/guide-mobile.css");
+@import url("/css/mobile-menu.css");
+
 html,
 body {
   margin: 0;

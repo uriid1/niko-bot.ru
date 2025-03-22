@@ -1,35 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggleButton = document.getElementById('theme-toggle');
-  const themeLink = document.getElementById('theme-link');
-  const button = document.getElementById('theme-toggle')
+const themes = [
+  { text: 'Light', value: 'light.css' },
+  { text: 'Dark', value: 'dark.css' },
+  { text: 'Biotech', value: 'biotech.css' },
+  { text: 'Cyberpunk', value: 'cyberpunk.css' },
+  { text: 'Dark blue', value: 'dark-blue.css' },
+  { text: 'Dark pink', value: 'dark-pink.css' },
+  { text: 'Desert', value: 'desert.css' },
+  { text: 'Emerald gold', value: 'emerald-gold.css' },
+  { text: 'Green dark', value: 'green-dark.css' },
+  { text: 'Grunge', value: 'grunge.css' },
+  { text: 'Hi-tech', value: 'hi-tech.css' },
+  { text: 'Monochrome', value: 'monochrome.css' },
+  { text: 'Moon', value: 'moon.css' },
+  { text: 'Neon', value: 'neon.css' },
+  { text: 'Red', value: 'red.css' },
+  { text: 'Retro', value: 'retro.css' },
+  { text: 'Space', value: 'space.css' }
+];
 
-  // Проверяем сохранённую тему в localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    themeLink.href = '/css/themes/dark.css';
-    button.textContent = 'Light Theme';
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdown = document.getElementById('dropdown');
+
+  // Добавление тега <link>, если его нет
+  let themeLink = document.getElementById("theme-link");
+  if (!themeLink) {
+    themeLink = document.createElement("link");
+    themeLink.id = "theme-link";
+    themeLink.rel = "stylesheet";
+    document.head.appendChild(themeLink);
   }
 
-  themeToggleButton.addEventListener('click', () => {
-    document.documentElement.classList.add("theme-transition");
-
-    // Проверяем текущую тему и меняем на противоположную
-    if (themeLink.href.includes('dark.css')) {
-      themeLink.href = '/css/themes/light.css';
-      localStorage.setItem('theme', 'light');
-
-      button.textContent = 'Dark Theme';
-    } else {
-      themeLink.href = '/css/themes/dark.css';
-      localStorage.setItem('theme', 'dark');
-
-      console.log('ok')
-      button.textContent = 'Light Theme';
-    }
-
-    // Убираем класс после окончания анимации
-    // 300ms для 
-    setTimeout(() => {
-      document.documentElement.classList.remove("theme-transition");
-    }, 300);
+  themes.forEach(optionData => {
+    const option = document.createElement('option');
+    option.value = optionData.value;
+    option.textContent = optionData.text;
+    dropdown.appendChild(option);
   });
-});
+
+  // Если тема не задана сохраняем основную
+  let themInStorage = localStorage.getItem('theme');
+
+  if (themInStorage === null) {
+    themInStorage = 'light.css';
+  }
+
+  // Применяем полученную тему
+  themeLink.href = '/css/themes/' + themInStorage;
+  localStorage.setItem('theme', themInStorage);
+
+  dropdown.selectedIndex = themes.findIndex(theme => theme.value === themInStorage);
+
+  dropdown.addEventListener('change', function() {
+    const theme = dropdown.options[dropdown.selectedIndex].value;
+    themeLink.href = '/css/themes/' + theme;
+
+    // Сохранение темы в локальное хранилище
+    localStorage.setItem('theme', theme);
+  });
+})

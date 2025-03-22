@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/changeThemeDropdown.js"></script>
+    <script src="/js/changeTheme.js"></script>
 
     <title>Тест формы</title>
     <link rel="stylesheet" type="text/css" href="/css/global.css">
     <link id="theme-link" rel="stylesheet" href="/css/themes/light.css">
     <link rel="stylesheet" type="text/css" href="/css/background.css">
     <link rel="stylesheet" type="text/css" href="index.css">
-    $raw{/js/clickfraud.tmpl}
-    $raw{/js/yandex-metrika.tmpl}
+    {{ if (opts.devmode) then }}
+      raw{/js/clickfraud.tmpl}
+      raw{/js/yandex-metrika.tmpl}
+    {{ end }}
   </head>
 
   <body>

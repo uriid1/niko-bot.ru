@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import path from 'path';
+import { compileTemplate } from "./template-compiler.js"
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -22,40 +23,6 @@ function isTextFile(ext) {
   return textTypes.includes(ext);
 }
 
-async function processHTMLTemplate(content, filePath, rootPath) {
-  // Обработка $raw{...}
-  const rawMatches = content.match(RAW_REGEX);
-
-  if (rawMatches) {
-    for (const match of rawMatches) {
-      const rawPath = match.match(/\$raw\{([^}]+)\}/)[1];
-
-      // Проверка на абсолютный путь (начинается с /)
-      let absolutePath;
-
-      if (rawPath.startsWith('/')) {
-        // Если путь начинается с /, считаем его от корня сайта
-        absolutePath = path.join(rootPath, rawPath.substring(1));
-      }
-      else {
-        // Иначе относительно текущего файла
-        const fileDir = path.dirname(filePath);
-        absolutePath = path.resolve(fileDir, rawPath);
-      }
-
-      try {
-        const scriptContent = await readFile(absolutePath, 'utf-8');
-        content = content.replace(match, scriptContent);
-      }
-      catch (error) {
-        console.error(`Error loading ${rawPath}:`, error);
-      }
-    }
-  }
-
-  return content;
-}
-
 async function getFile(filePath, rootPath) {
   const ext = path.extname(filePath).toLowerCase();
 
@@ -72,7 +39,14 @@ async function getFile(filePath, rootPath) {
     
     // Применение шаблонизаторов
     if (ext === '.html') {
-      data = await processHTMLTemplate(data, filePath, rootPath);
+      // Компилируем шаблон
+      const renderTemplate = await compileTemplate(data, filePath, rootPath)
+
+      const html = renderTemplate({
+        opts: { devmode: parseInt(process.env.DEVMODE) !== 1 },
+      })
+      
+      data = html;
     }
   }
 
