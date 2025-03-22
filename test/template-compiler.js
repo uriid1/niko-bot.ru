@@ -24,4 +24,3 @@ const html2 = renderTemplate({
   user: { isLoggedIn: false },
 })
 console.log('Результат 2:', html2)
-

@@ -21,6 +21,15 @@ const themes = [
 document.addEventListener('DOMContentLoaded', () => {
   const dropdown = document.getElementById('dropdown');
 
+  // Предварительная загрузка всех тем
+  themes.forEach(theme => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.href = '/css/themes/' + theme.value;
+    preloadLink.as = 'style';
+    document.head.appendChild(preloadLink);
+  });
+
   // Добавление тега <link>, если его нет
   let themeLink = document.getElementById("theme-link");
   if (!themeLink) {
