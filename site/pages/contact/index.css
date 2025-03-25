@@ -114,8 +114,7 @@ p {
 }
 
 .form-control {
-  width: 100%;
-  max-width: 420px;
+  width: 93%;
   padding: 12px 15px;
   border: 1px solid #ddd;
   border-radius: 6px;
