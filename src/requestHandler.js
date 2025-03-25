@@ -5,6 +5,7 @@ import { getFile } from './fileHandler.js';
 import error from './middlewares/error.js'
 import json from './middlewares/json.js'
 import ResponseType from './enums/ResponseType.js'
+import logRequest from '#src/logRequest.js';
 
 // Роуты
 import contactForm from './routes/v1/sendContact.js'
@@ -16,7 +17,7 @@ const routes = {
     'POST': contactForm
   },
 
-  '/v1/getRequests/': {
+  '/v1/getRequests': {
     'GET': getRequests
   }
 }
@@ -26,8 +27,12 @@ const SITE_DIR = path.resolve('site');
 async function GET(req, res) {
   let url = req.url;
 
+  if (url === '/pages/contact/') {
+    logRequest(req, res);
+  }
+
   const { pathname } = new URL(req.url, `http://${req.headers.host}`);
-  const route = routes[pathname];
+  const route = routes[pathname.replace(/\/$/, '')];
   if (route) {
     await route['GET'](req, res);
 

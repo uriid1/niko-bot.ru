@@ -3,10 +3,14 @@ import { URL } from 'url';
 import { pipeline } from 'node:stream';
 import { appendFile, writeFile } from 'node:fs/promises';
 import ResponseType from '#src/enums/ResponseType.js'
+import logRequest from '#src/logRequest.js';
 
 const LOG_FILE = path.join('site', 'pages', 'contact', 'log.txt');
 
 async function contactForm(req, res) {
+  // Логирование
+  logRequest(req, res);
+
   if (req.headers['content-type'] !== 'application/json') {
     res.error(ResponseType.BAD_REQUEST);
 

@@ -8,6 +8,7 @@ SITEMAP_FILE="site/sitemap.xml"
 ALLOWED_PAGES=(
   "commands-guide"
   "mod-commands-guide"
+  "contact"
 )
 
 # Заголовок

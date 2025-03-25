@@ -27,18 +27,18 @@ const logRequest = (req, res) => {
   const { method, url, headers } = req;
   const ip = getClientIp(req) || 'unknown';
   const date = new Date().toISOString();
-  
+
   const stmt = db.prepare(`
     INSERT INTO requests (ip, date, path, method, headers)
     VALUES (?, ?, ?, ?, ?)
   `);
-  
+
   stmt.run(ip, date, url, method, JSON.stringify(headers), (err) => {
     if (err) {
       console.error('Erorr:', err.message);
     }
   });
-  
+
   stmt.finalize();
 };
 
