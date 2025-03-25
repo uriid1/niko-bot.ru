@@ -5,6 +5,7 @@ import logRequest from './src/logRequest.js';
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
+  console.log(req.socket);
   logRequest(req, res);
   handleRequest(req, res);
 });
