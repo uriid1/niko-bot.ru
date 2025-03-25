@@ -4,12 +4,12 @@ import { getFile } from './fileHandler.js';
 import { existsSync } from 'node:fs';
 
 // Роуты
-import testForm from './routes/v1/testForm.js'
+import contactForm from './routes/v1/contact-form.js'
 
 // Мапа роутов
 const routes = {
-  '/v1/test-form': {
-    'POST': testForm
+  '/v1/contact-form': {
+    'POST': contactForm
   }
 }
 
@@ -38,37 +38,22 @@ async function GET(req, res) {
     return;
   }
 
-  try {
-    const file = await getFile(filePath, SITE_DIR);
+  const file = await getFile(filePath, SITE_DIR);
 
-    res.writeHead(200, {
-      'Content-Type': file.contentType,
-      'Cache-Control': 'public, max-age=604800, must-revalidate'
-    });
+  res.writeHead(200, {
+    'Content-Type': file.contentType,
+    'Cache-Control': 'public, max-age=604800, must-revalidate'
+  });
 
-    res.end(file.data);
-  }
-  catch (err) {
-    console.log(err);
-
-    res.writeHead(500, { 'Content-Type': 'text/html; charset=UTF-8' });
-    res.end('<h1>500 Server Error</h1>');
-  }
+  res.end(file.data);
 }
 
 async function POST(req, res) {
   const url = req.url;
   const route = routes[url];
-  if (route) {
-    try {
-      await route['POST'](req, res);
-    }
-    catch (err) {
-      console.log(err);
 
-      res.writeHead(500, { 'Content-Type': 'text/html; charset=UTF-8' });
-      res.end('<h1>500 Server Error</h1>');
-    }
+  if (route) {
+    await route['POST'](req, res);
   }
 }
 
