@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на подключение Нико бота</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/css/global.css">
+  <link rel="stylesheet" type="text/css" href="/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="/css/guide-menu.css">
+  <link rel="stylesheet" type="text/css" href="/css/mobile-menu.css">
+  <link rel="stylesheet" type="text/css" href="/css/background.css">
+  <script src="/js/changeTheme.js"></script>
+</head>
+<body>
+  <script src="index.js"></script>
+  <script src="/js/toggleMenu.js" defer></script>
+
+  <!-- Шапка сайта -->
+  <header class="site-header">
+    <div class="logo-glitch">Niko Bot</div>
+    <nav class="site-header__nav">
+      <a href="#" class="site-header__nav-link">Гайды</a>
+      <a href="https://t.me/niko_bot_news" class="site-header__nav-link">Новости</a>
+      <a href="https://t.me/niko_rp_bot?start=donat" class="site-header__nav-link">Донат</a>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <div class="burger-menu" onclick="openMenu()" aria-label="Открыть меню">
+      <div class="burger-menu__line"></div>
+      <div class="burger-menu__line"></div>
+      <div class="burger-menu__line"></div>
+    </div>
+  </header>
+
+  <div class="spacer"></div>
+
+  <!-- Расширяемое пространство -->
+  <div class="space-flex"></div>
+
+  <!-- Фон для мобильного меню -->
+  <div class="burger-overlay"></div>
+  <div class="burger-menu__panel">
+    <div class="burger-menu__close" onclick="closeMenu()" aria-label="Закрыть меню">&times;</div>
+    <p class="burger-menu__title">Меню</p>
+
+    <nav class="burger-menu__nav">
+      <a href="#" class="burger-menu__link">Гайды</a>
+      <a href="https://t.me/niko_bot_news" class="burger-menu__link">Новости</a>
+      <a href="https://t.me/niko_rp_bot?start=donat" class="burger-menu__link">Донат</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <h1>Подключение к <span>Нико боту</span></h1>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8V4H8"></path>
+            <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+            <path d="M2 14h2"></path>
+            <path d="M20 14h2"></path>
+            <path d="M15 13v2"></path>
+            <path d="M9 13v2"></path>
+          </svg>
+          Заявка на подключение
+        </h2>
+        <p>Заполните форму ниже, чтобы оставить заявку на подключение игрового Telegram бота</p>
+      </div>
+      
+      <form method="POST" action="/v1/contact-form" id='contact-form'>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name" class="required">Имя</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Введите ваше имя" required>
+          </div>
+          
+          <div class="form-row">            
+            <div class="form-group" style="flex: 1;">
+              <label for="telegram" class="required">Telegram</label>
+              <input type="text" id="telegram" name="telegram" class="form-control" placeholder="@username" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Опишите, для каких целей вам нужен бот, или задайте вопросы"></textarea>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <button type="submit" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+              <path d="M22 2 11 13"></path>
+            </svg>
+            Отправить заявку
+          </button>
+
+          <span id="successMessage" aria-live="polite">Отправлено!</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Расширяемое пространство -->
+  <div class="space-flex"></div>
+
+  <div class="spacer"></div>
+
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <p>(c) uriid1</p>
+      <p>Уже 2025!</p>
+    </div>
+
+    <div class="site-footer__content">
+      <label for="dropdown">Choose Theme</label>
+      <select id="dropdown"></select>
+    </div>
+  </footer>
+
+  <div class="bg-pattern"></div>
+</body>
+</html>
