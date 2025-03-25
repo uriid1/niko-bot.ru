@@ -1,9 +1,11 @@
 import http from 'http';
 import { handleRequest } from './src/requestHandler.js';
+import logRequest from './src/logRequest.js';
 
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
+  logRequest(req, res);
   handleRequest(req, res);
 });
 

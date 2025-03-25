@@ -1,12 +1,12 @@
-import { readFile } from 'node:fs/promises';
 import path from 'path';
+import { readFile } from 'node:fs/promises';
 import { compileTemplate } from "./template-compiler.js"
 
 const MIME_TYPES = {
-  '.html': 'text/html; charset=UTF-8',
-  '.css': 'text/css; charset=UTF-8',
-  '.js': 'application/javascript; charset=UTF-8',
-  '.txt': 'text/plain; charset=UTF-8',
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'application/javascript',
+  '.txt': 'text/plain',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -15,8 +15,6 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon',
   '.webp': 'image/webp'
 };
-
-const RAW_REGEX = /\$raw\{([^}]+)\}/g;
 
 function isTextFile(ext) {
   const textTypes = ['.html', '.css', '.js', '.json', '.txt', '.md', '.svg'];
@@ -28,13 +26,12 @@ async function getFile(filePath, rootPath) {
 
   let data;
   let contentType = MIME_TYPES[ext] || 'application/octet-stream';
-  let isBinary = !isTextFile(ext);
+  let isBinary = false;
 
   // Чтение файла в зависимости от его типа
-  if (isBinary) {
-    data = await readFile(filePath);
-  }
-  else {
+  if (isTextFile(ext)) {
+    contentType = contentType + '; charset=UTF-8'
+
     data = await readFile(filePath, 'utf-8');
     
     // Применение шаблонизаторов
@@ -49,11 +46,15 @@ async function getFile(filePath, rootPath) {
       data = html;
     }
   }
+  else {
+    isBinary = true;
+    data = await readFile(filePath);
+  }
 
   return { 
     data, 
     contentType, 
-    isBinary 
+    isBinary
   };
 }
 

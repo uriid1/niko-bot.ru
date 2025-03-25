@@ -1,0 +1,12 @@
+{
+  "name": "Node server",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "imports": {
+    "#src/*": "./src/*"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

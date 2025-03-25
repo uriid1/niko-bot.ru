@@ -2,13 +2,13 @@ import path from 'path';
 import { URL } from 'url';
 import { pipeline } from 'node:stream';
 import { appendFile, writeFile } from 'node:fs/promises';
+import ResponseType from '#src/enums/ResponseType.js'
 
 const LOG_FILE = path.join('site', 'pages', 'contact', 'log.txt');
 
 async function contactForm(req, res) {
   if (req.headers['content-type'] !== 'application/json') {
-    res.writeHead(400, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 400, reason: 'Bad Request' }));
+    res.error(ResponseType.BAD_REQUEST);
 
     return;
   }
@@ -29,11 +29,10 @@ async function contactForm(req, res) {
 
       await appendFile(LOG_FILE, logEntry);
 
-      res.writeHead(200);
-      res.end('ok');
-    } catch (err) {
-      res.writeHead(500);
-      res.end('error');
+      res.json(ResponseType.OK);
+    }
+    catch (err) {
+      res.error();
 
       console.error(err);
     }
